@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Jourdan | Escritor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Special+Elite&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --fondo: #0a0a0a;
+            --dorado-oscuro: #8e793e;
+            --gris-texto: #d1d1d1;
+            --blanco-hueso: #f4f4f4;
+        }
+
+        body {
+            background-color: var(--fondo);
+            color: var(--gris-texto);
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: radial-gradient(circle, rgba(142,121,62,0.1) 0%, rgba(10,10,10,1) 80%);
+            border-bottom: 1px solid var(--dorado-oscuro);
+        }
+
+        h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: var(--blanco-hueso);
+            margin-bottom: 0.5rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-family: 'Special Elite', cursive;
+            font-size: 1.2rem;
+            color: var(--dorado-oscuro);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 1rem;
+        }
+
+        section { margin-bottom: 6rem; }
+
+        h2 {
+            font-family: 'Cinzel', serif;
+            color: var(--dorado-oscuro);
+            border-bottom: 1px solid var(--dorado-oscuro);
+            display: inline-block;
+            margin-bottom: 2.5rem;
+        }
+
+        /* Libros */
+        .libros-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .libro-card {
+            background: #151515;
+            padding: 2rem;
+            border: 1px solid #222;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .libro-card:hover {
+            border-color: var(--dorado-oscuro);
+            transform: translateY(-5px);
+        }
+
+        .libro-card h3 {
+            font-family: 'Cinzel', serif;
+            color: var(--blanco-hueso);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--dorado-oscuro);
+            color: var(--dorado-oscuro);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--dorado-oscuro);
+            color: var(--fondo);
+        }
+
+        /* Agenda */
+        .agenda-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .fecha { font-weight: bold; color: var(--blanco-hueso); }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            font-size: 0.8rem;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Christian Jourdan</h1>
+        <p class="subtitle">Thriller | Esoterismo | Crónicas de lo Extraordinario</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="obras">
+            <h2>Obras Publicadas</h2>
+            <div class="libros-grid">
+                <div class="libro-card">
+                    <h3>El ocaso de las sombras</h3>
+                    <p><em>Trascendentia</em></p>
+                    <p>Donde la justicia y la sombra se entrelazan en un juego de espejos.</p>
+                    <a href="#" class="btn">Adquirir en Amazon</a>
+                </div>
+                <div class="libro-card">
+                    <h3>El ocaso de las sombras</h3>
+                    <p><em>Preludium</em></p>
+                    <p>El origen de la oscuridad. El inicio del fin.</p>
+                    <a href="#" class="btn">Comprar en Tinta Libre</a>
+                </div>
+                <div class="libro-card">
+                    <h3>El portal de los días velados</h3>
+                    <p>Historias donde lo imposible se vuelve inevitable.</p>
+                    <a href="#" class="btn">Ver en Editorial</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="agenda">
+            <h2>Agenda Literaria</h2>
+            <div class="agenda-item">
+                <span class="fecha">Próximamente</span>
+                <span>Presentación Oficial - Rosario, Argentina</span>
+            </div>
+            <div class="agenda-item">
+                <span class="fecha">Invierno 2024</span>
+                <span>Firma de ejemplares - Feria del Libro</span>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p>Para presentaciones, colaboraciones o prensa:</p>
+            <p><strong>Email:</strong> contacto@christianjourdan.com</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Christian Jourdan. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>
