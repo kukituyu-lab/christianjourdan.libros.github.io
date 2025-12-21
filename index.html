@@ -4,178 +4,208 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Christian Jourdan | Escritor</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Special+Elite&family=Raleway:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
     <style>
         :root {
             --fondo: #0a0a0a;
-            --dorado-oscuro: #8e793e;
-            --gris-texto: #d1d1d1;
-            --blanco-hueso: #f4f4f4;
+            --dorado: #b89241;
+            --gris: #cccccc;
+            --negro-carta: #151515;
         }
-
         body {
             background-color: var(--fondo);
-            color: var(--gris-texto);
-            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            font-family: 'Cinzel', serif;
             margin: 0;
+            padding: 0;
             line-height: 1.6;
         }
-
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+        /* Encabezado */
+        .hero {
+            padding: 80px 20px;
             text-align: center;
-            background: radial-gradient(circle, rgba(142,121,62,0.1) 0%, rgba(10,10,10,1) 80%);
-            border-bottom: 1px solid var(--dorado-oscuro);
+            background: radial-gradient(circle, #1c1c1c 0%, #000000 100%);
+            border-bottom: 2px solid var(--dorado);
         }
-
         h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 3.5rem;
-            color: var(--blanco-hueso);
-            margin-bottom: 0.5rem;
-            letter-spacing: 5px;
+            font-size: 3rem;
+            margin: 0;
+            color: var(--dorado);
             text-transform: uppercase;
+            letter-spacing: 4px;
         }
-
-        .subtitle {
+        .tagline {
             font-family: 'Special Elite', cursive;
-            font-size: 1.2rem;
-            color: var(--dorado-oscuro);
+            color: var(--gris);
+            font-size: 1.1rem;
+            margin-top: 15px;
         }
-
+        
+        /* Contenedor Principal */
         .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 4rem 1rem;
+            padding: 40px 20px;
         }
 
-        section { margin-bottom: 6rem; }
-
-        h2 {
-            font-family: 'Cinzel', serif;
-            color: var(--dorado-oscuro);
-            border-bottom: 1px solid var(--dorado-oscuro);
-            display: inline-block;
-            margin-bottom: 2.5rem;
-        }
-
-        /* Libros */
-        .libros-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
+        /* Tarjetas de Libros */
         .libro-card {
-            background: #151515;
-            padding: 2rem;
-            border: 1px solid #222;
-            transition: 0.3s;
+            background-color: var(--negro-carta);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 50px;
             text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
         }
-
         .libro-card:hover {
-            border-color: var(--dorado-oscuro);
+            border-color: var(--dorado);
             transform: translateY(-5px);
         }
 
-        .libro-card h3 {
-            font-family: 'Cinzel', serif;
-            color: var(--blanco-hueso);
+        /* Imágenes de Tapa */
+        .portada {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.8);
+            margin-bottom: 20px;
+            border: 1px solid #333;
         }
 
+        h2 {
+            color: var(--dorado);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .sinopsis {
+            font-family: 'Special Elite', sans-serif; /* O una sans-serif limpia */
+            font-size: 1rem;
+            color: #ddd;
+            margin-bottom: 25px;
+            padding: 0 10px;
+        }
+
+        /* Botones */
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
         .btn {
             display: inline-block;
-            margin-top: 1rem;
-            padding: 0.8rem 1.5rem;
-            border: 1px solid var(--dorado-oscuro);
-            color: var(--dorado-oscuro);
+            padding: 10px 20px;
+            border: 1px solid var(--dorado);
+            color: var(--dorado);
             text-decoration: none;
-            font-size: 0.9rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
             transition: 0.3s;
+            border-radius: 2px;
         }
-
         .btn:hover {
-            background: var(--dorado-oscuro);
-            color: var(--fondo);
+            background: var(--dorado);
+            color: #000;
+        }
+        /* Botón especial para YouTube */
+        .btn-yt {
+            border-color: #ff0000;
+            color: #ffcccc;
+        }
+        .btn-yt:hover {
+            background: #ff0000;
+            color: white;
         }
 
-        /* Agenda */
-        .agenda-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 0;
-            border-bottom: 1px solid #222;
+        .proximamente {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #222;
+            color: #888;
+            border: 1px dashed #555;
+            font-family: 'Special Elite', cursive;
         }
 
-        .fecha { font-weight: bold; color: var(--blanco-hueso); }
-
+        /* Pie de página */
         footer {
             text-align: center;
-            padding: 3rem;
+            padding: 40px;
             font-size: 0.8rem;
+            color: #555;
             border-top: 1px solid #222;
+        }
+        
+        /* Ajuste para móviles */
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .btn { width: 100%; margin-bottom: 5px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <div class="hero">
         <h1>Christian Jourdan</h1>
-        <p class="subtitle">Thriller | Esoterismo | Crónicas de lo Extraordinario</p>
-    </header>
+        <p class="tagline">Crónicas de lo extraordinario • Thriller • Esoterismo</p>
+    </div>
 
     <div class="container">
-        
-        <section id="obras">
-            <h2>Obras Publicadas</h2>
-            <div class="libros-grid">
-                <div class="libro-card">
-                    <h3>El ocaso de las sombras</h3>
-                    <p><em>Trascendentia</em></p>
-                    <p>Donde la justicia y la sombra se entrelazan en un juego de espejos.</p>
-                    <a href="#" class="btn">Adquirir en Amazon</a>
-                </div>
-                <div class="libro-card">
-                    <h3>El ocaso de las sombras</h3>
-                    <p><em>Preludium</em></p>
-                    <p>El origen de la oscuridad. El inicio del fin.</p>
-                    <a href="#" class="btn">Comprar en Tinta Libre</a>
-                </div>
-                <div class="libro-card">
-                    <h3>El portal de los días velados</h3>
-                    <p>Historias donde lo imposible se vuelve inevitable.</p>
-                    <a href="#" class="btn">Ver en Editorial</a>
-                </div>
-            </div>
-        </section>
 
-        <section id="agenda">
-            <h2>Agenda Literaria</h2>
-            <div class="agenda-item">
-                <span class="fecha">Próximamente</span>
-                <span>Presentación Oficial - Rosario, Argentina</span>
+        <div class="libro-card">
+            <img src="trascendentia.jpg" alt="Tapa Trascendentia" class="portada">
+            
+            <h2>El Ocaso de las Sombras: Trascendentia</h2>
+            <p class="sinopsis">
+                Una muerte imposible expone el nexo entre una farmacológica y símbolos antiguos. 
+                Santiago Moix se sumerge en un laberinto de sociedades secretas y mensajes cifrados.
+            </p>
+            
+            <div class="btn-container">
+                <a href="https://articulo.mercadolibre.com.ar/MLA-2475311094-ocaso-de-las-sombras-el-christian-jourdan-_JM" class="btn" target="_blank">Mercado Libre</a>
+                <a href="https://www.tintalibre.com.ar/book/1809/El_ocaso_de_las_sombras" class="btn" target="_blank">Tinta Libre</a>
+                <a href="https://www.amazon.com/-/es/Christian-Jourdan-ebook/dp/B0CXFM67W3" class="btn" target="_blank">Amazon Kindle</a>
             </div>
-            <div class="agenda-item">
-                <span class="fecha">Invierno 2024</span>
-                <span>Firma de ejemplares - Feria del Libro</span>
-            </div>
-        </section>
+        </div>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Para presentaciones, colaboraciones o prensa:</p>
-            <p><strong>Email:</strong> contacto@christianjourdan.com</p>
-        </section>
+        <div class="libro-card">
+            <img src="el-portal.jpg" alt="Tapa El Portal" class="portada">
+            
+            <h2>El Portal de los Días Velados</h2>
+            <p class="sinopsis">
+                Historias donde lo imposible se vuelve inevitable. 
+                Sumérgete en una ciudad de Rosario surrealista y onírica a través de 24 cuentos cortos.
+            </p>
+            
+            <div class="btn-container">
+                <a href="https://articulo.mercadolibre.com.ar/MLA-2475245876-portal-de-los-dias-velados-christian-jourdan-_JM" class="btn" target="_blank">Mercado Libre</a>
+                <a href="https://www.amazon.in/portal-los-d%C3%ADas-velados-extraordinario-ebook/dp/B0FNKHXJCM" class="btn" target="_blank">Amazon (Español)</a>
+                <a href="https://www.amazon.com/portal-veiled-days-Chronicles-extraordinary-ebook/dp/B0FNLVMDZ8" class="btn" target="_blank">Amazon (English)</a>
+                <a href="https://www.youtube.com/watch?v=pERELDvmx2A" class="btn btn-yt" target="_blank">▶ Ver Sinopsis en YouTube</a>
+            </div>
+        </div>
+
+        <div class="libro-card">
+            <img src="preludium.jpg" alt="Tapa Preludium" class="portada">
+            
+            <h2>El Ocaso de las Sombras: Preludium</h2>
+            <p class="sinopsis">
+                Crímenes rituales, un grimorio prohibido y una investigación que destapa desenlaces inesperados. 
+                Preludium abre El ocaso de las sombras con un noir oscuro donde cada pista exige un precio.
+            </p>
+            
+            <span class="proximamente">PRÓXIMAMENTE - Editorial Tinta Libre</span>
+        </div>
 
     </div>
 
     <footer>
-        <p>&copy; 2024 Christian Jourdan. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Christian Jourdan. Todos los derechos reservados.</p>
     </footer>
 
 </body>
