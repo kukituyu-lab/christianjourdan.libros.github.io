@@ -16,7 +16,7 @@
   <meta property="og:description" content="Crónicas de lo extraordinario • Thriller • Esoterismo. Libros y compra directa." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://christianjourdan.com/" />
-  <!-- Si después querés, creamos og.jpg (1200x630) -->
+  <!-- Opcional: subí og.jpg (1200x630) -->
   <meta property="og:image" content="https://christianjourdan.com/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
@@ -30,7 +30,6 @@
       --fondo: #0a0a0a;
       --dorado: #b89241;
       --gris: #cccccc;
-      --negro-carta: #151515;
 
       --linea: rgba(184,146,65,0.28);
       --borde: rgba(255,255,255,0.10);
@@ -60,7 +59,6 @@
       border-radius: 8px;
     }
 
-    /* Skip link */
     .skip {
       position: absolute;
       left: -999px;
@@ -76,7 +74,6 @@
     }
     .skip:focus { left: 12px; }
 
-    /* Topbar */
     .topbar {
       position: sticky;
       top: 0;
@@ -134,7 +131,6 @@
       color: #fff;
     }
 
-    /* Hero */
     .hero {
       padding: 64px 20px 38px;
       text-align: center;
@@ -166,14 +162,12 @@
       flex-wrap: wrap;
     }
 
-    /* Container */
     .container {
       max-width: var(--max);
       margin: 0 auto;
       padding: 28px 16px 40px;
     }
 
-    /* Author header */
     .author-card{
       margin-top: 18px;
       display: grid;
@@ -199,7 +193,6 @@
     .author-meta .name{ color: rgba(255,255,255,0.9); font-family: 'Special Elite', cursive; }
     .author-meta .note{ color: rgba(255,255,255,0.7); font-family: 'Special Elite', cursive; }
 
-    /* Sections */
     .section {
       margin-top: 34px;
       padding-top: 18px;
@@ -218,7 +211,6 @@
       font-family: 'Special Elite', cursive;
     }
 
-    /* Book cards */
     .libro-card {
       background-color: rgba(21,21,21,0.92);
       border: 1px solid rgba(255,255,255,0.10);
@@ -271,7 +263,6 @@
       padding: 0 10px;
     }
 
-    /* Buttons */
     .btn-container {
       display: flex;
       flex-wrap: wrap;
@@ -324,7 +315,6 @@
       color: #130006;
       border-color: rgba(225,48,108,0.95);
     }
-
     .btn-wa {
       border-color: rgba(37,211,102,0.65);
       color: rgba(190,255,220,0.95);
@@ -346,7 +336,6 @@
       border-radius: 10px;
     }
 
-    /* Panels */
     .grid-2 {
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -373,7 +362,6 @@
     }
     .list li { margin: 6px 0; }
 
-    /* Contact form */
     .form { display: grid; gap: 10px; margin-top: 12px; }
     input, textarea {
       width: 100%;
@@ -388,7 +376,6 @@
     textarea { min-height: 120px; resize: vertical; }
     .muted { color: rgba(255,255,255,0.65); font-size: 0.92rem; font-family: 'Special Elite', cursive; }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 34px 16px;
@@ -399,7 +386,6 @@
       font-family: 'Special Elite', cursive;
     }
 
-    /* Floating WhatsApp (needs number) */
     .wa-float {
       position: fixed;
       right: 16px;
@@ -436,7 +422,6 @@
     }
   </style>
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -446,9 +431,7 @@
     "jobTitle":"Escritor",
     "email":"christianjourdan.libros@gmail.com",
     "knowsAbout":["Thriller","Esoterismo","Simbolismo","Sobrenatural","Narrativa"],
-    "sameAs":[
-      "https://www.instagram.com/christianjourdan75/"
-    ]
+    "sameAs":[ "https://www.instagram.com/christianjourdan75/" ]
   }
   </script>
 </head>
@@ -466,6 +449,7 @@
         <a href="#libros">Libros</a>
         <a href="#bio">Biografía</a>
         <a href="#pagos">Pagos</a>
+        <a href="#newsletter">Newsletter</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
@@ -478,13 +462,12 @@
     <div class="hero-cta">
       <a class="btn primary" href="#libros">Ver libros</a>
       <a class="btn btn-ig" href="https://www.instagram.com/christianjourdan75/" target="_blank" rel="noopener">Instagram</a>
-      <a class="btn" href="#pagos">Compra directa</a>
+      <a class="btn btn-wa" href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </header>
 
   <main id="contenido" class="container">
 
-    <!-- AUTHOR -->
     <section aria-label="Presentación">
       <div class="author-card">
         <img class="author-photo" src="foto-byn-perfil.jpeg" alt="Foto de Christian Jourdan" loading="eager" decoding="async">
@@ -493,17 +476,15 @@
           <p class="note">Médico (UNR) · Medicina transfusional y terapias celulares · Narrativa entre ciencia y misticismo.</p>
           <div class="btn-container" style="justify-content:flex-start">
             <a class="btn" href="mailto:christianjourdan.libros@gmail.com">Email</a>
-            <!-- Cuando me pases tu número, lo activo bien -->
-            <a class="btn btn-wa" href="https://wa.me/54911XXXXXXXX?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-wa" href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- LIBROS -->
     <section id="libros" class="section" aria-label="Libros">
       <h2>Libros</h2>
-      <p class="lead">Elegí tu portal de compra: Mercado Libre, editorial, Amazon o directo (si te gusta el trato humano).</p>
+      <p class="lead">Elegí tu portal de compra: Mercado Libre, editorial, Amazon o directo.</p>
 
       <article class="libro-card">
         <img src="trascendentia.jpg" alt="Tapa El Ocaso de las Sombras: Trascendentia" class="portada" loading="lazy" decoding="async">
@@ -516,7 +497,7 @@
           <a href="https://articulo.mercadolibre.com.ar/MLA-2475311094-ocaso-de-las-sombras-el-christian-jourdan-_JM" class="btn" target="_blank" rel="noopener">Mercado Libre</a>
           <a href="https://www.tintalibre.com.ar/book/1809/El_ocaso_de_las_sombras" class="btn" target="_blank" rel="noopener">Tinta Libre</a>
           <a href="https://www.amazon.com/-/es/Christian-Jourdan-ebook/dp/B0CXFM67W3" class="btn" target="_blank" rel="noopener">Amazon Kindle</a>
-          <a href="#pagos" class="btn primary">Comprar directo</a>
+          <a href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20quiero%20comprar%20El%20Ocaso%20de%20las%20Sombras%3A%20Trascendentia.%20%C2%BFC%C3%B3mo%20hacemos%3F" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </article>
 
@@ -532,7 +513,7 @@
           <a href="https://www.amazon.in/portal-los-d%C3%ADas-velados-extraordinario-ebook/dp/B0FNKHXJCM" class="btn" target="_blank" rel="noopener">Amazon (Español)</a>
           <a href="https://www.amazon.com/portal-veiled-days-Chronicles-extraordinary-ebook/dp/B0FNLVMDZ8" class="btn" target="_blank" rel="noopener">Amazon (English)</a>
           <a href="https://www.youtube.com/watch?v=pERELDvmx2A" class="btn btn-yt" target="_blank" rel="noopener">▶ Ver sinopsis</a>
-          <a href="#pagos" class="btn primary">Comprar directo</a>
+          <a href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20quiero%20comprar%20El%20Portal%20de%20los%20D%C3%ADas%20Velados.%20%C2%BFC%C3%B3mo%20hacemos%3F" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </article>
 
@@ -544,10 +525,12 @@
           Preludium abre El ocaso de las sombras con un noir oscuro donde cada pista exige un precio.
         </p>
         <span class="proximamente">PRÓXIMAMENTE · Editorial Tinta Libre</span>
+        <div class="btn-container" style="margin-top:14px">
+          <a href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20quiero%20reservar%20El%20Ocaso%20de%20las%20Sombras%3A%20Preludium.%20%C2%BFCu%C3%A1ndo%20sale%20y%20c%C3%B3mo%20lo%20consigo%3F" class="btn btn-wa" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+        </div>
       </article>
     </section>
 
-    <!-- BIO -->
     <section id="bio" class="section" aria-label="Biografía">
       <h2>Biografía</h2>
 
@@ -583,10 +566,9 @@
       </div>
     </section>
 
-    <!-- PAGOS -->
     <section id="pagos" class="section" aria-label="Pagos">
       <h2>Pagos directos</h2>
-      <p class="lead">Si querés comprar directo, acá tenés los datos. La literatura no salva al mundo, pero por lo menos llega sin comisiones.</p>
+      <p class="lead">Mercado Pago o transferencia. Avisame por WhatsApp o mail con el comprobante y coordinamos entrega/envío.</p>
 
       <div class="grid-2">
         <div class="panel">
@@ -595,9 +577,10 @@
             <li>Alias: <strong>cjourdan.1975</strong></li>
             <li>CVU: <strong>0000003100036363029105</strong></li>
           </ul>
-          <p class="muted" style="margin-top:10px">
-            En el comprobante poné: <em>Libro + tu nombre + email</em>.
-          </p>
+          <div class="btn-container" style="justify-content:flex-start; margin-top:12px">
+            <a class="btn btn-wa" href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20te%20adjunto%20comprobante%20de%20Mercado%20Pago%20por%20la%20compra%20de%20un%20libro." target="_blank" rel="noopener">Avisar por WhatsApp</a>
+            <a class="btn" href="mailto:christianjourdan.libros@gmail.com?subject=Comprobante%20de%20pago&body=Hola%20Christian%2C%20adjunto%20comprobante%20de%20pago%20y%20te%20cuento%20qu%C3%A9%20libro%20compr%C3%A9.%0A%0ALibro%3A%0ANombre%3A%0ADirecci%C3%B3n%20(si%20hay%20env%C3%ADo)%3A" target="_blank" rel="noopener">Avisar por Email</a>
+          </div>
         </div>
 
         <div class="panel">
@@ -606,26 +589,58 @@
             <li>Banco Galicia — Alias: <strong>chrisjou.75</strong></li>
             <li>CBU: <strong>00707550-30004004009606</strong></li>
           </ul>
-          <p class="muted" style="margin-top:10px">
-            Después avisame por email o WhatsApp y coordinamos entrega/envío.
-          </p>
+          <div class="btn-container" style="justify-content:flex-start; margin-top:12px">
+            <a class="btn btn-wa" href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20te%20adjunto%20comprobante%20de%20transferencia%20por%20la%20compra%20de%20un%20libro." target="_blank" rel="noopener">Avisar por WhatsApp</a>
+            <a class="btn" href="mailto:christianjourdan.libros@gmail.com?subject=Comprobante%20de%20transferencia&body=Hola%20Christian%2C%20adjunto%20comprobante%20de%20transferencia%20y%20te%20cuento%20qu%C3%A9%20libro%20compr%C3%A9.%0A%0ALibro%3A%0ANombre%3A%0ADirecci%C3%B3n%20(si%20hay%20env%C3%ADo)%3A" target="_blank" rel="noopener">Avisar por Email</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACTO -->
+    <section id="newsletter" class="section" aria-label="Newsletter">
+      <h2>Newsletter</h2>
+      <p class="lead">Novedades, lanzamientos y algún texto corto. Sin spam: ya existe el mundo.</p>
+
+      <div class="panel">
+        <p class="muted" style="margin:0 0 10px">
+          Suscripción simple (sin plataforma): te abre un mail para sumarte.
+        </p>
+        <div class="btn-container" style="justify-content:flex-start">
+          <a class="btn primary"
+             href="mailto:christianjourdan.libros@gmail.com?subject=Suscripci%C3%B3n%20Newsletter&body=Hola%20Christian%2C%20quiero%20sumarme%20a%20tu%20newsletter.%0A%0ANombre%3A%0AEmail%3A">
+            Quiero suscribirme
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO (FORM REAL) -->
     <section id="contacto" class="section" aria-label="Contacto">
       <h2>Contacto</h2>
 
       <div class="grid-2">
         <div class="panel">
           <p class="lead">Escribime</p>
-          <form class="form" id="contactForm">
+
+          <!-- IMPORTANTE:
+               1) ANDÁ A FORMSPREE Y CREÁ EL FORM CON TU GMAIL.
+               2) TE DAN UNA URL: https://formspree.io/f/xxxxx
+               3) PEGALA EN EL action DE ABAJO (UNA SOLA LÍNEA) -->
+          <form class="form" id="contactForm"
+                action="https://formspree.io/f/FORM_ID"
+                method="POST">
             <input name="name" placeholder="Tu nombre" required />
             <input name="email" type="email" placeholder="Tu email" required />
             <textarea name="message" placeholder="Tu mensaje..." required></textarea>
+
+            <input type="hidden" name="_subject" value="Mensaje desde christianjourdan.com" />
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+
             <button class="btn primary" type="submit">Enviar</button>
-            <p class="muted">Esto abre tu mail. Si querés formulario real (sin depender del cliente de correo), lo dejamos con Formspree/Netlify.</p>
+
+            <p class="muted" id="formNote">Se envía directo a <strong>christianjourdan.libros@gmail.com</strong>.</p>
+            <p class="muted" id="formSuccess" style="display:none">Listo. Mensaje enviado.</p>
+            <p class="muted" id="formError" style="display:none">No se pudo enviar. Probá de nuevo o escribime por WhatsApp.</p>
           </form>
         </div>
 
@@ -634,12 +649,12 @@
           <ul class="list">
             <li>Email: <a href="mailto:christianjourdan.libros@gmail.com">christianjourdan.libros@gmail.com</a></li>
             <li>Instagram: <a href="https://www.instagram.com/christianjourdan75/" target="_blank" rel="noopener">@christianjourdan75</a></li>
+            <li>WhatsApp: <a href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">5393416878275</a></li>
           </ul>
 
           <div class="btn-container" style="justify-content:flex-start; margin-top:12px">
+            <a class="btn btn-wa" href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">WhatsApp</a>
             <a class="btn btn-ig" href="https://www.instagram.com/christianjourdan75/" target="_blank" rel="noopener">Instagram</a>
-            <!-- se activa cuando me pases el número -->
-            <a class="btn btn-wa" href="https://wa.me/54911XXXXXXXX?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
       </div>
@@ -650,9 +665,8 @@
     </footer>
   </main>
 
-  <!-- WhatsApp flotante (necesita tu número) -->
   <a class="wa-float"
-     href="https://wa.me/54911XXXXXXXX?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web."
+     href="https://wa.me/5393416878275?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web."
      target="_blank" rel="noopener" aria-label="WhatsApp">
     WhatsApp 💬
   </a>
@@ -660,23 +674,39 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    document.getElementById("contactForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const data = new FormData(e.target);
-      const name = encodeURIComponent(data.get("name"));
-      const email = encodeURIComponent(data.get("email"));
-      const message = encodeURIComponent(data.get("message"));
+    // Envío a Formspree sin recargar la página
+    const form = document.getElementById("contactForm");
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-      const subject = encodeURIComponent("Contacto desde christianjourdan.com");
-      const body = encodeURIComponent(
-        "Nombre: " + decodeURIComponent(name) + "\n" +
-        "Email: " + decodeURIComponent(email) + "\n\n" +
-        "Mensaje:\n" + decodeURIComponent(message)
-      );
+        const note = document.getElementById("formNote");
+        const ok = document.getElementById("formSuccess");
+        const err = document.getElementById("formError");
 
-      const to = "christianjourdan.libros@gmail.com";
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    });
+        if (note) note.style.display = "none";
+        if (ok) ok.style.display = "none";
+        if (err) err.style.display = "none";
+
+        try {
+          const data = new FormData(form);
+          const res = await fetch(form.action, {
+            method: "POST",
+            body: data,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (res.ok) {
+            form.reset();
+            if (ok) ok.style.display = "block";
+          } else {
+            if (err) err.style.display = "block";
+          }
+        } catch {
+          if (err) err.style.display = "block";
+        }
+      });
+    }
   </script>
 </body>
 </html>
