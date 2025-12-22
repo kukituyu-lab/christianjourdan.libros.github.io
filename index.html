@@ -419,6 +419,78 @@
       .libro-card, .btn { transition: none; }
       .btn:hover, .libro-card:hover { transform: none; }
     }
+
+    /* =========================
+       NUEVO: Modal de video
+       ========================= */
+    .video-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 9999;
+    }
+    .video-modal.is-open { display: flex; }
+
+    .video-modal__dialog {
+      width: min(980px, 100%);
+      background: rgba(21,21,21,0.96);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.75);
+      overflow: hidden;
+    }
+
+    .video-modal__topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(10,10,10,0.35);
+    }
+    .video-modal__title {
+      color: rgba(255,255,255,0.85);
+      font-family: 'Special Elite', cursive;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .video-modal__close {
+      appearance: none;
+      border: 1px solid rgba(184,146,65,0.55);
+      background: rgba(10,10,10,0.25);
+      color: rgba(184,146,65,0.95);
+      border-radius: 10px;
+      padding: 8px 10px;
+      cursor: pointer;
+      font-family: 'Cinzel', serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.75rem;
+      transition: 0.2s ease;
+    }
+    .video-modal__close:hover {
+      background: rgba(184,146,65,0.92);
+      color: #000;
+    }
+
+    .video-modal__frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+    }
+    .video-modal__frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -496,6 +568,13 @@
           <a href="https://articulo.mercadolibre.com.ar/MLA-2475311094-ocaso-de-las-sombras-el-christian-jourdan-_JM" class="btn" target="_blank" rel="noopener">Mercado Libre</a>
           <a href="https://www.tintalibre.com.ar/book/1809/El_ocaso_de_las_sombras" class="btn" target="_blank" rel="noopener">Tinta Libre</a>
           <a href="https://www.amazon.com/-/es/Christian-Jourdan-ebook/dp/B0CXFM67W3" class="btn" target="_blank" rel="noopener">Amazon Kindle</a>
+
+          <!-- NUEVO: Botón que abre el trailer en ventana -->
+          <a href="https://youtu.be/0bHo7JvBN2E" class="btn btn-yt js-video"
+             data-video="https://youtu.be/0bHo7JvBN2E"
+             data-title="Trascendentia · Booktrailer"
+             target="_blank" rel="noopener">▶ Booktrailer</a>
+
           <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20quiero%20comprar%20El%20Ocaso%20de%20las%20Sombras%3A%20Trascendentia.%20%C2%BFC%C3%B3mo%20hacemos%3F" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </article>
@@ -511,23 +590,40 @@
           <a href="https://articulo.mercadolibre.com.ar/MLA-2475245876-portal-de-los-dias-velados-christian-jourdan-_JM" class="btn" target="_blank" rel="noopener">Mercado Libre</a>
           <a href="https://www.amazon.in/portal-los-d%C3%ADas-velados-extraordinario-ebook/dp/B0FNKHXJCM" class="btn" target="_blank" rel="noopener">Amazon (Español)</a>
           <a href="https://www.amazon.com/portal-veiled-days-Chronicles-extraordinary-ebook/dp/B0FNLVMDZ8" class="btn" target="_blank" rel="noopener">Amazon (English)</a>
-          <a href="https://www.youtube.com/watch?v=pERELDvmx2A" class="btn btn-yt" target="_blank" rel="noopener">▶ Ver sinopsis</a>
+
+          <!-- Este ya existía: mantiene la URL. También lo hago abrir en ventana -->
+          <a href="https://www.youtube.com/watch?v=pERELDvmx2A" class="btn btn-yt js-video"
+             data-video="https://www.youtube.com/watch?v=pERELDvmx2A"
+             data-title="El Portal de los Días Velados · Video"
+             target="_blank" rel="noopener">▶ Ver sinopsis</a>
+
           <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20quiero%20comprar%20El%20Portal%20de%20los%20D%C3%ADas%20Velados.%20%C2%BFC%C3%B3mo%20hacemos%3F" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
         </div>
       </article>
 
       <article class="libro-card">
         <img src="preludium.jpg" alt="Tapa El Ocaso de las Sombras: Preludium" class="portada" loading="lazy" decoding="async">
+
         <h3>El Ocaso de las Sombras: Preludium</h3>
         <p class="sinopsis">
           Crímenes rituales, un grimorio prohibido y una investigación que destapa desenlaces inesperados.
           Preludium abre El ocaso de las sombras con un noir oscuro donde cada pista exige un precio.
         </p>
+
         <span class="proximamente">PRÓXIMAMENTE · Editorial Tinta Libre</span>
+
         <div class="btn-container" style="margin-top:14px">
+
+          <!-- NUEVO: Botón que abre el teaser en ventana -->
+          <a href="https://youtube.com/shorts/ZJKbuwwrvh0" class="btn btn-yt js-video"
+             data-video="https://youtube.com/shorts/ZJKbuwwrvh0"
+             data-title="Preludium · Teaser"
+             target="_blank" rel="noopener">▶ Teaser</a>
+
           <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20quiero%20reservar%20El%20Ocaso%20de%20las%20Sombras%3A%20Preludium.%20%C2%BFCu%C3%A1ndo%20sale%20y%20c%C3%B3mo%20lo%20consigo%3F" class="btn btn-wa" target="_blank" rel="noopener">Reservar por WhatsApp</a>
         </div>
       </article>
+
     </section>
 
     <section id="bio" class="section" aria-label="Biografía">
@@ -609,7 +705,6 @@
       </div>
     </section>
 
-    <!-- CONTACTO (FORM REAL) -->
     <section id="contacto" class="section" aria-label="Contacto">
       <h2>Contacto</h2>
 
@@ -662,6 +757,25 @@
     WhatsApp 💬
   </a>
 
+  <!-- =========================
+       NUEVO: Modal de video (HTML)
+       ========================= -->
+  <div class="video-modal" id="videoModal" aria-hidden="true">
+    <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
+      <div class="video-modal__topbar">
+        <p class="video-modal__title" id="videoModalTitle">Video</p>
+        <button class="video-modal__close" id="videoModalClose" type="button">Cerrar ✕</button>
+      </div>
+      <div class="video-modal__frame">
+        <iframe id="videoModalIframe"
+                src=""
+                title="Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -698,6 +812,74 @@
         }
       });
     }
+
+    /* =========================
+       NUEVO: Ventana (modal) para trailers
+       ========================= */
+    const modal = document.getElementById("videoModal");
+    const modalClose = document.getElementById("videoModalClose");
+    const iframe = document.getElementById("videoModalIframe");
+    const titleEl = document.getElementById("videoModalTitle");
+
+    function toYouTubeEmbed(url) {
+      try {
+        // youtu.be/<id>
+        const short = url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
+        if (short && short[1]) return `https://www.youtube.com/embed/${short[1]}?autoplay=1&rel=0`;
+
+        // youtube.com/watch?v=<id>
+        const watch = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
+        if (watch && watch[1]) return `https://www.youtube.com/embed/${watch[1]}?autoplay=1&rel=0`;
+
+        // youtube.com/shorts/<id>
+        const shorts = url.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/);
+        if (shorts && shorts[1]) return `https://www.youtube.com/embed/${shorts[1]}?autoplay=1&rel=0`;
+
+        return url; // fallback
+      } catch {
+        return url;
+      }
+    }
+
+    function openModal(videoUrl, title) {
+      const embed = toYouTubeEmbed(videoUrl);
+      iframe.src = embed;
+      iframe.title = title || "Video";
+      titleEl.textContent = title || "Video";
+      modal.classList.add("is-open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeModal() {
+      modal.classList.remove("is-open");
+      modal.setAttribute("aria-hidden", "true");
+      iframe.src = ""; // corta el video
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".js-video").forEach((a) => {
+      a.addEventListener("click", (e) => {
+        // abre la ventana en vez de irse a YouTube
+        e.preventDefault();
+        const video = a.getAttribute("data-video") || a.href;
+        const t = a.getAttribute("data-title") || "Video";
+        openModal(video, t);
+      });
+    });
+
+    modalClose.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+      // click afuera del cuadro = cerrar
+      if (e.target === modal) closeModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) {
+        closeModal();
+      }
+    });
   </script>
 </body>
 </html>
