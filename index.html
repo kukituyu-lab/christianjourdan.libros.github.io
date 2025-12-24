@@ -324,6 +324,17 @@
       border-color: rgba(37,211,102,0.95);
     }
 
+    /* NUEVO: Botón Spotify */
+    .btn-sp {
+      border-color: rgba(30,215,96,0.70);
+      color: rgba(210,255,230,0.95);
+    }
+    .btn-sp:hover {
+      background: rgba(30,215,96,0.95);
+      color: #001a0a;
+      border-color: rgba(30,215,96,0.95);
+    }
+
     .proximamente {
       display: inline-block;
       margin-top: 14px;
@@ -421,7 +432,7 @@
     }
 
     /* =========================
-       NUEVO: Modal de video
+       Modal genérico (Video / Spotify)
        ========================= */
     .video-modal {
       position: fixed;
@@ -478,6 +489,7 @@
       color: #000;
     }
 
+    /* Video frame */
     .video-modal__frame {
       position: relative;
       width: 100%;
@@ -490,6 +502,24 @@
       width: 100%;
       height: 100%;
       border: 0;
+    }
+
+    /* Spotify frame */
+    .spotify-modal__frame {
+      position: relative;
+      width: 100%;
+      background: #000;
+      padding: 12px;
+    }
+    .spotify-modal__frame iframe {
+      width: 100%;
+      height: 480px;
+      border: 0;
+      border-radius: 12px;
+      background: #000;
+    }
+    @media (max-width: 600px) {
+      .spotify-modal__frame iframe { height: 560px; }
     }
   </style>
 
@@ -533,6 +563,10 @@
     <div class="hero-cta">
       <a class="btn primary" href="#libros">Ver libros</a>
       <a class="btn btn-ig" href="https://www.instagram.com/christianjourdan75/" target="_blank" rel="noopener">Instagram</a>
+
+      <!-- Amazon Autor -->
+      <a class="btn" href="https://www.amazon.es/stores/Christian-Jourdan/author/B0FNLZ6123?ref=sr_ntt_srch_lnk_36&sr=8-36&shoppingPortalEnabled=true" target="_blank" rel="noopener">Amazon Autor</a>
+
       <a class="btn btn-wa" href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </header>
@@ -547,6 +581,7 @@
           <p class="note">Médico (UNR) · Medicina transfusional y terapias celulares · Narrativa entre ciencia y misticismo.</p>
           <div class="btn-container" style="justify-content:flex-start">
             <a class="btn" href="mailto:christianjourdan.libros@gmail.com">Email</a>
+            <a class="btn" href="https://www.amazon.es/stores/Christian-Jourdan/author/B0FNLZ6123?ref=sr_ntt_srch_lnk_36&sr=8-36&shoppingPortalEnabled=true" target="_blank" rel="noopener">Amazon Autor</a>
             <a class="btn btn-wa" href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </div>
@@ -569,7 +604,6 @@
           <a href="https://www.tintalibre.com.ar/book/1809/El_ocaso_de_las_sombras" class="btn" target="_blank" rel="noopener">Tinta Libre</a>
           <a href="https://www.amazon.com/-/es/Christian-Jourdan-ebook/dp/B0CXFM67W3" class="btn" target="_blank" rel="noopener">Amazon Kindle</a>
 
-          <!-- NUEVO: Botón que abre el trailer en ventana -->
           <a href="https://youtu.be/0bHo7JvBN2E" class="btn btn-yt js-video"
              data-video="https://youtu.be/0bHo7JvBN2E"
              data-title="Trascendentia · Booktrailer"
@@ -591,11 +625,17 @@
           <a href="https://www.amazon.in/portal-los-d%C3%ADas-velados-extraordinario-ebook/dp/B0FNKHXJCM" class="btn" target="_blank" rel="noopener">Amazon (Español)</a>
           <a href="https://www.amazon.com/portal-veiled-days-Chronicles-extraordinary-ebook/dp/B0FNLVMDZ8" class="btn" target="_blank" rel="noopener">Amazon (English)</a>
 
-          <!-- Este ya existía: mantiene la URL. También lo hago abrir en ventana -->
           <a href="https://www.youtube.com/watch?v=pERELDvmx2A" class="btn btn-yt js-video"
              data-video="https://www.youtube.com/watch?v=pERELDvmx2A"
              data-title="El Portal de los Días Velados · Video"
              target="_blank" rel="noopener">▶ Ver sinopsis</a>
+
+          <!-- NUEVO: botón Spotify (reproduce en ventana, sin salir) -->
+          <a href="https://open.spotify.com/playlist/252DbAxYmIhnirzNoGSfwT?si=6Aaj95V9S7y-eV3qeZ0qMw&pi=AOEwnZwpRUuVc"
+             class="btn btn-sp js-spotify"
+             data-spotify="https://open.spotify.com/playlist/252DbAxYmIhnirzNoGSfwT?si=6Aaj95V9S7y-eV3qeZ0qMw&pi=AOEwnZwpRUuVc"
+             data-title="El Portal de los Días Velados · Playlist Spotify"
+             target="_blank" rel="noopener">♫ Spotify Playlist</a>
 
           <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20quiero%20comprar%20El%20Portal%20de%20los%20D%C3%ADas%20Velados.%20%C2%BFC%C3%B3mo%20hacemos%3F" class="btn btn-wa" target="_blank" rel="noopener">WhatsApp</a>
         </div>
@@ -613,8 +653,6 @@
         <span class="proximamente">PRÓXIMAMENTE · Editorial Tinta Libre</span>
 
         <div class="btn-container" style="margin-top:14px">
-
-          <!-- NUEVO: Botón que abre el teaser en ventana -->
           <a href="https://youtube.com/shorts/ZJKbuwwrvh0" class="btn btn-yt js-video"
              data-video="https://youtube.com/shorts/ZJKbuwwrvh0"
              data-title="Preludium · Teaser"
@@ -758,7 +796,7 @@
   </a>
 
   <!-- =========================
-       NUEVO: Modal de video (HTML)
+       Modal de VIDEO (YouTube)
        ========================= -->
   <div class="video-modal" id="videoModal" aria-hidden="true">
     <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
@@ -772,6 +810,25 @@
                 title="Video"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================
+       NUEVO: Modal de SPOTIFY
+       ========================= -->
+  <div class="video-modal" id="spotifyModal" aria-hidden="true">
+    <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="spotifyModalTitle">
+      <div class="video-modal__topbar">
+        <p class="video-modal__title" id="spotifyModalTitle">Spotify</p>
+        <button class="video-modal__close" id="spotifyModalClose" type="button">Cerrar ✕</button>
+      </div>
+      <div class="spotify-modal__frame">
+        <iframe id="spotifyModalIframe"
+                src=""
+                title="Spotify"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
       </div>
     </div>
   </div>
@@ -814,7 +871,7 @@
     }
 
     /* =========================
-       NUEVO: Ventana (modal) para trailers
+       Ventana (modal) para trailers (YouTube)
        ========================= */
     const modal = document.getElementById("videoModal");
     const modalClose = document.getElementById("videoModalClose");
@@ -841,7 +898,7 @@
       }
     }
 
-    function openModal(videoUrl, title) {
+    function openVideoModal(videoUrl, title) {
       const embed = toYouTubeEmbed(videoUrl);
       iframe.src = embed;
       iframe.title = title || "Video";
@@ -851,7 +908,7 @@
       document.body.style.overflow = "hidden";
     }
 
-    function closeModal() {
+    function closeVideoModal() {
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
       iframe.src = ""; // corta el video
@@ -860,24 +917,78 @@
 
     document.querySelectorAll(".js-video").forEach((a) => {
       a.addEventListener("click", (e) => {
-        // abre la ventana en vez de irse a YouTube
         e.preventDefault();
         const video = a.getAttribute("data-video") || a.href;
         const t = a.getAttribute("data-title") || "Video";
-        openModal(video, t);
+        openVideoModal(video, t);
       });
     });
 
-    modalClose.addEventListener("click", closeModal);
+    modalClose.addEventListener("click", closeVideoModal);
 
     modal.addEventListener("click", (e) => {
-      // click afuera del cuadro = cerrar
-      if (e.target === modal) closeModal();
+      if (e.target === modal) closeVideoModal();
     });
 
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && modal.classList.contains("is-open")) {
-        closeModal();
+        closeVideoModal();
+      }
+    });
+
+    /* =========================
+       NUEVO: Ventana (modal) para Spotify
+       ========================= */
+    const spModal = document.getElementById("spotifyModal");
+    const spClose = document.getElementById("spotifyModalClose");
+    const spIframe = document.getElementById("spotifyModalIframe");
+    const spTitle = document.getElementById("spotifyModalTitle");
+
+    function toSpotifyEmbed(url) {
+      try {
+        // convierte: open.spotify.com/playlist/<id>...
+        const m = url.match(/open\.spotify\.com\/playlist\/([A-Za-z0-9]+)/);
+        if (m && m[1]) return `https://open.spotify.com/embed/playlist/${m[1]}?utm_source=generator&theme=0`;
+        return url;
+      } catch {
+        return url;
+      }
+    }
+
+    function openSpotifyModal(url, title) {
+      spIframe.src = toSpotifyEmbed(url);
+      spIframe.title = title || "Spotify";
+      spTitle.textContent = title || "Spotify";
+      spModal.classList.add("is-open");
+      spModal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeSpotifyModal() {
+      spModal.classList.remove("is-open");
+      spModal.setAttribute("aria-hidden", "true");
+      spIframe.src = ""; // corta audio
+      document.body.style.overflow = "";
+    }
+
+    document.querySelectorAll(".js-spotify").forEach((a) => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        const url = a.getAttribute("data-spotify") || a.href;
+        const t = a.getAttribute("data-title") || "Spotify";
+        openSpotifyModal(url, t);
+      });
+    });
+
+    spClose.addEventListener("click", closeSpotifyModal);
+
+    spModal.addEventListener("click", (e) => {
+      if (e.target === spModal) closeSpotifyModal();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && spModal.classList.contains("is-open")) {
+        closeSpotifyModal();
       }
     });
   </script>
