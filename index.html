@@ -8,7 +8,7 @@
 
   <!-- SEO -->
   <meta name="description" content="Sitio oficial de Christian Edsel Jourdan. Thriller, esoterismo y crónicas de lo extraordinario. Libros disponibles en Mercado Libre, Tinta Libre y Amazon. Compra directa por Mercado Pago o transferencia." />
-  <meta name="keywords" content="Christian Jourdan, escritor, thriller, esoterismo, crónicas de lo extraordinario, El ocaso de las sombras, Trascendentia, Preludium, El portal de los días velados" />
+  <meta name="keywords" content="Christian Jourdan, escritor, thriller, esoterismo, crónicas de lo extraordinario, El ocaso de las sombras, Trascendentia, Preludium, El portal de los días velados, Atajos, Óxido en la niebla" />
   <link rel="canonical" href="https://christianjourdan.com/" />
 
   <!-- Social / Open Graph -->
@@ -50,7 +50,27 @@
       line-height: 1.65;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
+      position: relative;
     }
+
+    /* =========================
+       NUEVO (C): Escudo como marca de agua
+       ========================= */
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background-image: url("escudo-cj-alfa.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: min(860px, 90vw);
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+      filter: grayscale(100%);
+    }
+    body > * { position: relative; z-index: 1; }
+
     a { color: inherit; }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
       outline: none;
@@ -262,6 +282,19 @@
       padding: 0 10px;
     }
 
+    .badge {
+      display: inline-block;
+      margin: 6px 0 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.22);
+      color: rgba(255,255,255,0.75);
+      font-family: 'Special Elite', cursive;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
     .btn-container {
       display: flex;
       flex-wrap: wrap;
@@ -323,8 +356,6 @@
       color: #001a0a;
       border-color: rgba(37,211,102,0.95);
     }
-
-    /* NUEVO: Botón Spotify */
     .btn-sp {
       border-color: rgba(30,215,96,0.70);
       color: rgba(210,255,230,0.95);
@@ -396,6 +427,28 @@
       font-family: 'Special Elite', cursive;
     }
 
+    .brand-footer{
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0.85;
+    }
+    .brand-footer img{
+      height: 54px;
+      width: auto;
+      filter: grayscale(10%);
+    }
+    .brand-footer .logo{
+      height: 44px;
+    }
+    @media (max-width: 600px){
+      .brand-footer img{ height: 46px; }
+      .brand-footer .logo{ height: 38px; }
+    }
+
     .wa-float {
       position: fixed;
       right: 16px;
@@ -432,7 +485,7 @@
     }
 
     /* =========================
-       Modal genérico (Video / Spotify)
+       Modal (Video / Spotify)
        ========================= */
     .video-modal {
       position: fixed;
@@ -489,7 +542,6 @@
       color: #000;
     }
 
-    /* Video frame */
     .video-modal__frame {
       position: relative;
       width: 100%;
@@ -504,7 +556,6 @@
       border: 0;
     }
 
-    /* Spotify frame */
     .spotify-modal__frame {
       position: relative;
       width: 100%;
@@ -548,6 +599,7 @@
       </a>
       <nav class="nav" aria-label="Navegación">
         <a href="#libros">Libros</a>
+        <a href="#proximos">Próximos</a>
         <a href="#bio">Biografía</a>
         <a href="#pagos">Pagos</a>
         <a href="#newsletter">Newsletter</a>
@@ -564,7 +616,6 @@
       <a class="btn primary" href="#libros">Ver libros</a>
       <a class="btn btn-ig" href="https://www.instagram.com/christianjourdan75/" target="_blank" rel="noopener">Instagram</a>
 
-      <!-- Amazon Autor -->
       <a class="btn" href="https://www.amazon.es/stores/Christian-Jourdan/author/B0FNLZ6123?ref=sr_ntt_srch_lnk_36&sr=8-36&shoppingPortalEnabled=true" target="_blank" rel="noopener">Amazon Autor</a>
 
       <a class="btn btn-wa" href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20te%20escribo%20desde%20tu%20web." target="_blank" rel="noopener">WhatsApp</a>
@@ -630,7 +681,6 @@
              data-title="El Portal de los Días Velados · Video"
              target="_blank" rel="noopener">▶ Ver sinopsis</a>
 
-          <!-- NUEVO: botón Spotify (reproduce en ventana, sin salir) -->
           <a href="https://open.spotify.com/playlist/252DbAxYmIhnirzNoGSfwT?si=6Aaj95V9S7y-eV3qeZ0qMw&pi=AOEwnZwpRUuVc"
              class="btn btn-sp js-spotify"
              data-spotify="https://open.spotify.com/playlist/252DbAxYmIhnirzNoGSfwT?si=6Aaj95V9S7y-eV3qeZ0qMw&pi=AOEwnZwpRUuVc"
@@ -661,7 +711,70 @@
           <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20quiero%20reservar%20El%20Ocaso%20de%20las%20Sombras%3A%20Preludium.%20%C2%BFCu%C3%A1ndo%20sale%20y%20c%C3%B3mo%20lo%20consigo%3F" class="btn btn-wa" target="_blank" rel="noopener">Reservar por WhatsApp</a>
         </div>
       </article>
+    </section>
 
+    <section id="proximos" class="section" aria-label="Próximos lanzamientos">
+      <h2>Próximos lanzamientos</h2>
+      <p class="lead">Proyectos en desarrollo. La niebla avanza… y yo sigo escribiendo.</p>
+
+      <!-- ATAJOS -->
+      <article class="libro-card">
+        <img src="Atajos%20(Tapa%2021x15).jpg" alt="Tapa Atajos" class="portada" loading="lazy" decoding="async">
+        <h3>Atajos</h3>
+        <span class="badge">Proyecto en desarrollo</span>
+        <p class="sinopsis">
+          En el asfalto gastado de Rosario, donde cada rincón esconde una historia y cada silencio puede ser una amenaza,
+          Mario Rossi, un taxista, navega la noche con la astucia de quien conoce demasiado bien los márgenes de los barrios.
+          Su “rutina”, esas entregas extraoficiales, son solo un síntoma de una ciudad que late al ritmo de pactos invisibles y
+          peligros latentes.<br><br>
+
+          Pero hay secretos que pesan más que el plomo de una bala y verdades que, una vez descubiertas, te marcan a fuego.
+          Cuando un hallazgo inesperado lo arroja al corazón de una conspiración que trepa por las cloacas del poder,
+          Mario se enfrenta a un dilema brutal: seguir siendo un peón en un juego que no comprende o arriesgarlo todo por un
+          atisbo de justicia, o quizás, de venganza.<br><br>
+
+          <em>Atajos</em> es una inmersión visceral en el alma oscura de una ciudad argentina, un thriller donde la lealtad es un
+          lujo escaso y la supervivencia, un arte que se aprende a los golpes. Una crónica urbana que te arrastra por calles donde
+          la única ley es la del más fuerte y cada decisión puede ser la última.<br><br>
+
+          Preparate para un viaje sin retorno al corazón de la noche, donde los verdaderos monstruos no siempre se esconden en la oscuridad.<br>
+          “Hay infiernos que caben en un bolsillo.”<br><br>
+
+          La historia se encuentra actualmente en desarrollo.
+        </p>
+        <div class="btn-container">
+          <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20me%20interesa%20Atajos.%20%C2%BFMe%20avis%C3%A1s%20novedades%20o%20cu%C3%A1ndo%20sale%3F" class="btn btn-wa" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          <a href="#contacto" class="btn">Contacto</a>
+        </div>
+      </article>
+
+      <!-- ÓXIDO EN LA NIEBLA -->
+      <article class="libro-card">
+        <img src="oxido-en-la-niebla.jpg" alt="Tapa Óxido en la niebla" class="portada" loading="lazy" decoding="async">
+        <h3>Óxido en la niebla</h3>
+        <span class="badge">Proyecto en desarrollo</span>
+        <p class="sinopsis">
+          Buenos Aires, década de 1920.<br>
+          El puerto cruje bajo el peso del carbón y el hierro. En los callejones donde la niebla no se disipa,
+          comienzan a aparecer cuerpos marcados por símbolos imposibles: engranajes incrustados en la carne,
+          fracturas mecánicas, heridas que no pertenecen a ningún arma conocida.<br><br>
+
+          El inspector Ezequiel Ríos, un veterano desgastado por la violencia y la corrupción, recibe el caso
+          con escepticismo. Pero pronto descubre que los asesinatos siguen un patrón que remite a experimentos
+          clandestinos, a sociedades secretas y a rumores de una máquina que podría alterar la materia y la mente.<br><br>
+
+          Mientras la ciudad se moderniza a toda velocidad —con tranvías eléctricos, fábricas humeantes y
+          promesas de progreso— algo antiguo y oscuro se filtra entre los engranajes: un óxido que no sólo
+          corroe el metal, sino también la razón.<br><br>
+
+          Un policial steampunk con atmósfera opresiva, conspiraciones, y una Buenos Aires que se vuelve un
+          laberinto donde la ciencia y lo sobrenatural se rozan peligrosamente.
+        </p>
+        <div class="btn-container">
+          <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20me%20interesa%20%C3%93xido%20en%20la%20niebla.%20%C2%BFMe%20avis%C3%A1s%20novedades%20o%20cu%C3%A1ndo%20sale%3F" class="btn btn-wa" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          <a href="#contacto" class="btn">Contacto</a>
+        </div>
+      </article>
     </section>
 
     <section id="bio" class="section" aria-label="Biografía">
@@ -786,6 +899,11 @@
 
     <footer>
       <p>&copy; <span id="year"></span> Christian Jourdan. Todos los derechos reservados.</p>
+
+      <div class="brand-footer" aria-label="Identidad">
+        <img class="logo" src="logo-cj-alfa.png" alt="Logo Christian Jourdan" loading="lazy" decoding="async">
+        <img src="escudo-cj-alfa.jpg" alt="Escudo Christian Jourdan" loading="lazy" decoding="async">
+      </div>
     </footer>
   </main>
 
@@ -795,9 +913,7 @@
     WhatsApp 💬
   </a>
 
-  <!-- =========================
-       Modal de VIDEO (YouTube)
-       ========================= -->
+  <!-- Modal Video -->
   <div class="video-modal" id="videoModal" aria-hidden="true">
     <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="videoModalTitle">
       <div class="video-modal__topbar">
@@ -814,9 +930,7 @@
     </div>
   </div>
 
-  <!-- =========================
-       NUEVO: Modal de SPOTIFY
-       ========================= -->
+  <!-- Modal Spotify -->
   <div class="video-modal" id="spotifyModal" aria-hidden="true">
     <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="spotifyModalTitle">
       <div class="video-modal__topbar">
@@ -836,7 +950,7 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Envío a Formspree sin recargar la página
+    // Formspree sin recargar
     const form = document.getElementById("contactForm");
     if (form) {
       form.addEventListener("submit", async (e) => {
@@ -870,9 +984,7 @@
       });
     }
 
-    /* =========================
-       Ventana (modal) para trailers (YouTube)
-       ========================= */
+    /* Modal YouTube */
     const modal = document.getElementById("videoModal");
     const modalClose = document.getElementById("videoModalClose");
     const iframe = document.getElementById("videoModalIframe");
@@ -880,19 +992,16 @@
 
     function toYouTubeEmbed(url) {
       try {
-        // youtu.be/<id>
         const short = url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
         if (short && short[1]) return `https://www.youtube.com/embed/${short[1]}?autoplay=1&rel=0`;
 
-        // youtube.com/watch?v=<id>
         const watch = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
         if (watch && watch[1]) return `https://www.youtube.com/embed/${watch[1]}?autoplay=1&rel=0`;
 
-        // youtube.com/shorts/<id>
         const shorts = url.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/);
         if (shorts && shorts[1]) return `https://www.youtube.com/embed/${shorts[1]}?autoplay=1&rel=0`;
 
-        return url; // fallback
+        return url;
       } catch {
         return url;
       }
@@ -911,7 +1020,7 @@
     function closeVideoModal() {
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
-      iframe.src = ""; // corta el video
+      iframe.src = "";
       document.body.style.overflow = "";
     }
 
@@ -936,9 +1045,7 @@
       }
     });
 
-    /* =========================
-       NUEVO: Ventana (modal) para Spotify
-       ========================= */
+    /* Modal Spotify */
     const spModal = document.getElementById("spotifyModal");
     const spClose = document.getElementById("spotifyModalClose");
     const spIframe = document.getElementById("spotifyModalIframe");
@@ -946,7 +1053,6 @@
 
     function toSpotifyEmbed(url) {
       try {
-        // convierte: open.spotify.com/playlist/<id>...
         const m = url.match(/open\.spotify\.com\/playlist\/([A-Za-z0-9]+)/);
         if (m && m[1]) return `https://open.spotify.com/embed/playlist/${m[1]}?utm_source=generator&theme=0`;
         return url;
@@ -967,7 +1073,7 @@
     function closeSpotifyModal() {
       spModal.classList.remove("is-open");
       spModal.setAttribute("aria-hidden", "true");
-      spIframe.src = ""; // corta audio
+      spIframe.src = "";
       document.body.style.overflow = "";
     }
 
