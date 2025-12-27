@@ -8,7 +8,7 @@
 
   <!-- SEO -->
   <meta name="description" content="Sitio oficial de Christian Edsel Jourdan. Thriller, esoterismo y crónicas de lo extraordinario. Libros disponibles en Mercado Libre, Tinta Libre y Amazon. Compra directa por Mercado Pago o transferencia." />
-  <meta name="keywords" content="Christian Jourdan, escritor, thriller, esoterismo, crónicas de lo extraordinario, El ocaso de las sombras, Trascendentia, Preludium, El portal de los días velados, Atajos" />
+  <meta name="keywords" content="Christian Jourdan, escritor, thriller, esoterismo, crónicas de lo extraordinario, El ocaso de las sombras, Trascendentia, Preludium, El portal de los días velados, Atajos, Óxido en la niebla" />
   <link rel="canonical" href="https://christianjourdan.com/" />
 
   <!-- Social / Open Graph -->
@@ -549,6 +549,7 @@
       <nav class="nav" aria-label="Navegación">
         <a href="#libros">Libros</a>
         <a href="#atajos">Atajos</a>
+        <a href="#oxido">Óxido</a>
         <a href="#bio">Biografía</a>
         <a href="#pagos">Pagos</a>
         <a href="#newsletter">Newsletter</a>
@@ -631,7 +632,6 @@
              data-title="El Portal de los Días Velados · Video"
              target="_blank" rel="noopener">▶ Ver sinopsis</a>
 
-          <!-- Botón Spotify (reproduce en ventana, sin salir) -->
           <a href="https://open.spotify.com/playlist/252DbAxYmIhnirzNoGSfwT?si=6Aaj95V9S7y-eV3qeZ0qMw&pi=AOEwnZwpRUuVc"
              class="btn btn-sp js-spotify"
              data-spotify="https://open.spotify.com/playlist/252DbAxYmIhnirzNoGSfwT?si=6Aaj95V9S7y-eV3qeZ0qMw&pi=AOEwnZwpRUuVc"
@@ -666,7 +666,7 @@
     </section>
 
     <!-- =========================
-         NUEVO: ATAJOS (con tapa + sinopsis)
+         ATAJOS
          ========================= -->
     <section id="atajos" class="section" aria-label="Atajos (proyecto en desarrollo)">
       <h2>Atajos</h2>
@@ -692,6 +692,36 @@
 
         <div class="btn-container">
           <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20me%20interesa%20Atajos.%20%C2%BFMe%20avis%C3%A1s%20novedades%20cuando%20haya%20fecha%20o%20preventas%3F" class="btn btn-wa" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          <a href="#contacto" class="btn">Escribirme</a>
+        </div>
+      </article>
+    </section>
+
+    <!-- =========================
+         ÓXIDO EN LA NIEBLA
+         ========================= -->
+    <section id="oxido" class="section" aria-label="Óxido en la niebla (proyecto en desarrollo)">
+      <h2>Óxido en la niebla</h2>
+      <p class="lead">Proyecto en desarrollo.</p>
+
+      <article class="libro-card">
+        <img src="oxido-en-la-niebla.jpg" alt="Tapa Óxido en la niebla" class="portada" loading="lazy" decoding="async">
+        <h3>Óxido en la niebla</h3>
+
+        <p class="sinopsis">
+          Buenos Aires, década de 1920.
+          <br>
+          El puerto crece, las fábricas avanzan y la ciudad entra de lleno en la era de las máquinas. Entre vapor, engranajes y nuevas tecnologías importadas, el progreso promete orden, seguridad y modernidad.
+          <br><br>
+          Cuando un hecho inquietante sacude los barrios del sur, un obrero del puerto, una estudiante de medicina y un pequeño grupo de aliados comienzan a percibir que algo más se está construyendo detrás de los galpones, las comisarías y los discursos oficiales. Talleres ocultos, artefactos ópticos y sistemas mecánicos anticipan una forma inédita de control, todavía difícil de nombrar.
+          <br><br>
+          <em>Óxido en la Niebla</em> es una novela policial de aventura con estética steampunk, ambientada en una Buenos Aires industrial y desigual, donde el conflicto entre ciencia, poder y conciencia define el verdadero campo de batalla. Una historia sobre quién mira, quién decide y qué precio se paga cuando la ciudad aprende a observarse a sí misma.
+          <br><br>
+          La historia se encuentra actualmente en desarrollo.
+        </p>
+
+        <div class="btn-container">
+          <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20me%20interesa%20%C3%93xido%20en%20la%20niebla.%20%C2%BFMe%20avis%C3%A1s%20novedades%20cuando%20haya%20fecha%20o%20preventas%3F" class="btn btn-wa" target="_blank" rel="noopener">Consultar por WhatsApp</a>
           <a href="#contacto" class="btn">Escribirme</a>
         </div>
       </article>
@@ -913,19 +943,16 @@
 
     function toYouTubeEmbed(url) {
       try {
-        // youtu.be/<id>
         const short = url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
         if (short && short[1]) return `https://www.youtube.com/embed/${short[1]}?autoplay=1&rel=0`;
 
-        // youtube.com/watch?v=<id>
         const watch = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
         if (watch && watch[1]) return `https://www.youtube.com/embed/${watch[1]}?autoplay=1&rel=0`;
 
-        // youtube.com/shorts/<id>
         const shorts = url.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/);
         if (shorts && shorts[1]) return `https://www.youtube.com/embed/${shorts[1]}?autoplay=1&rel=0`;
 
-        return url; // fallback
+        return url;
       } catch {
         return url;
       }
@@ -944,7 +971,7 @@
     function closeVideoModal() {
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
-      iframe.src = ""; // corta el video
+      iframe.src = "";
       document.body.style.overflow = "";
     }
 
@@ -979,7 +1006,6 @@
 
     function toSpotifyEmbed(url) {
       try {
-        // convierte: open.spotify.com/playlist/<id>...
         const m = url.match(/open\.spotify\.com\/playlist\/([A-Za-z0-9]+)/);
         if (m && m[1]) return `https://open.spotify.com/embed/playlist/${m[1]}?utm_source=generator&theme=0`;
         return url;
@@ -1000,7 +1026,7 @@
     function closeSpotifyModal() {
       spModal.classList.remove("is-open");
       spModal.setAttribute("aria-hidden", "true");
-      spIframe.src = ""; // corta audio
+      spIframe.src = "";
       document.body.style.overflow = "";
     }
 
