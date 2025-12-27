@@ -8,7 +8,7 @@
 
   <!-- SEO -->
   <meta name="description" content="Sitio oficial de Christian Edsel Jourdan. Thriller, esoterismo y crónicas de lo extraordinario. Libros disponibles en Mercado Libre, Tinta Libre y Amazon. Compra directa por Mercado Pago o transferencia." />
-  <meta name="keywords" content="Christian Jourdan, escritor, thriller, esoterismo, crónicas de lo extraordinario, El ocaso de las sombras, Trascendentia, Preludium, El portal de los días velados" />
+  <meta name="keywords" content="Christian Jourdan, escritor, thriller, esoterismo, crónicas de lo extraordinario, El ocaso de las sombras, Trascendentia, Preludium, El portal de los días velados, Atajos, Óxido en la niebla" />
   <link rel="canonical" href="https://christianjourdan.com/" />
 
   <!-- Social / Open Graph -->
@@ -50,7 +50,28 @@
       line-height: 1.65;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
+      position: relative;
     }
+
+    /* =========================
+       NUEVO (C): Escudo como marca de agua
+       ========================= */
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background-image: url("escudo-cj-alfa.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: min(860px, 90vw);
+      opacity: 0.06;              /* sutil */
+      pointer-events: none;
+      z-index: 0;
+      filter: grayscale(100%);
+    }
+    /* asegura que el contenido esté por encima */
+    body > * { position: relative; z-index: 1; }
+
     a { color: inherit; }
     a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
       outline: none;
@@ -262,6 +283,20 @@
       padding: 0 10px;
     }
 
+    /* NUEVO: etiqueta de estado de proyecto */
+    .badge {
+      display: inline-block;
+      margin: 6px 0 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.22);
+      color: rgba(255,255,255,0.75);
+      font-family: 'Special Elite', cursive;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
     .btn-container {
       display: flex;
       flex-wrap: wrap;
@@ -324,7 +359,7 @@
       border-color: rgba(37,211,102,0.95);
     }
 
-    /* NUEVO: Botón Spotify */
+    /* Spotify */
     .btn-sp {
       border-color: rgba(30,215,96,0.70);
       color: rgba(210,255,230,0.95);
@@ -396,6 +431,31 @@
       font-family: 'Special Elite', cursive;
     }
 
+    /* =========================
+       NUEVO (C): Logo + Escudo al final
+       ========================= */
+    .brand-footer{
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      opacity: 0.85;
+    }
+    .brand-footer img{
+      height: 54px;
+      width: auto;
+      filter: grayscale(10%);
+    }
+    .brand-footer .logo{
+      height: 44px;
+    }
+    @media (max-width: 600px){
+      .brand-footer img{ height: 46px; }
+      .brand-footer .logo{ height: 38px; }
+    }
+
     .wa-float {
       position: fixed;
       right: 16px;
@@ -432,7 +492,7 @@
     }
 
     /* =========================
-       Modal genérico (Video / Spotify)
+       Modal (Video / Spotify)
        ========================= */
     .video-modal {
       position: fixed;
@@ -489,7 +549,6 @@
       color: #000;
     }
 
-    /* Video frame */
     .video-modal__frame {
       position: relative;
       width: 100%;
@@ -504,7 +563,6 @@
       border: 0;
     }
 
-    /* Spotify frame */
     .spotify-modal__frame {
       position: relative;
       width: 100%;
@@ -548,6 +606,7 @@
       </a>
       <nav class="nav" aria-label="Navegación">
         <a href="#libros">Libros</a>
+        <a href="#proximos">Próximos</a>
         <a href="#bio">Biografía</a>
         <a href="#pagos">Pagos</a>
         <a href="#newsletter">Newsletter</a>
@@ -630,7 +689,7 @@
              data-title="El Portal de los Días Velados · Video"
              target="_blank" rel="noopener">▶ Ver sinopsis</a>
 
-          <!-- NUEVO: botón Spotify (reproduce en ventana, sin salir) -->
+          <!-- Spotify (modal) -->
           <a href="https://open.spotify.com/playlist/252DbAxYmIhnirzNoGSfwT?si=6Aaj95V9S7y-eV3qeZ0qMw&pi=AOEwnZwpRUuVc"
              class="btn btn-sp js-spotify"
              data-spotify="https://open.spotify.com/playlist/252DbAxYmIhnirzNoGSfwT?si=6Aaj95V9S7y-eV3qeZ0qMw&pi=AOEwnZwpRUuVc"
@@ -661,7 +720,58 @@
           <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20quiero%20reservar%20El%20Ocaso%20de%20las%20Sombras%3A%20Preludium.%20%C2%BFCu%C3%A1ndo%20sale%20y%20c%C3%B3mo%20lo%20consigo%3F" class="btn btn-wa" target="_blank" rel="noopener">Reservar por WhatsApp</a>
         </div>
       </article>
+    </section>
 
+    <!-- =========================
+         NUEVO: Próximos lanzamientos / Proyectos
+         (entre Libros y Bio)
+         ========================= -->
+    <section id="proximos" class="section" aria-label="Próximos lanzamientos">
+      <h2>Próximos lanzamientos</h2>
+      <p class="lead">Proyectos en desarrollo. La niebla avanza… y yo sigo escribiendo.</p>
+
+      <!-- ATAJOS -->
+      <article class="libro-card">
+        <!-- nombre con espacios: lo dejo URL-encoded para evitar problemas -->
+        <img src="Atajos%20(Tapa%2021x15).jpg" alt="Tapa Atajos" class="portada" loading="lazy" decoding="async">
+        <h3>Atajos</h3>
+        <span class="badge">Proyecto en desarrollo</span>
+        <p class="sinopsis">
+          Sinopsis en desarrollo. (En cuanto me pegues la sinopsis final de Atajos, la dejo acá con tus palabras.)
+        </p>
+        <div class="btn-container">
+          <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20me%20interesa%20Atajos.%20%C2%BFMe%20avis%C3%A1s%20novedades%20o%20cu%C3%A1ndo%20sale%3F" class="btn btn-wa" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          <a href="#contacto" class="btn">Contacto</a>
+        </div>
+      </article>
+
+      <!-- ÓXIDO EN LA NIEBLA -->
+      <article class="libro-card">
+        <img src="oxido-en-la-niebla.jpg" alt="Tapa Óxido en la niebla" class="portada" loading="lazy" decoding="async">
+        <h3>Óxido en la niebla</h3>
+        <span class="badge">Proyecto en desarrollo</span>
+        <p class="sinopsis">
+          Buenos Aires, década de 1920.<br>
+          El puerto cruje bajo el peso del carbón y el hierro. En los callejones donde la niebla no se disipa,
+          comienzan a aparecer cuerpos marcados por símbolos imposibles: engranajes incrustados en la carne,
+          fracturas mecánicas, heridas que no pertenecen a ningún arma conocida.<br><br>
+
+          El inspector Ezequiel Ríos, un veterano desgastado por la violencia y la corrupción, recibe el caso
+          con escepticismo. Pero pronto descubre que los asesinatos siguen un patrón que remite a experimentos
+          clandestinos, a sociedades secretas y a rumores de una máquina que podría alterar la materia y la mente.<br><br>
+
+          Mientras la ciudad se moderniza a toda velocidad —con tranvías eléctricos, fábricas humeantes y
+          promesas de progreso— algo antiguo y oscuro se filtra entre los engranajes: un óxido que no sólo
+          corroe el metal, sino también la razón.<br><br>
+
+          Un policial steampunk con atmósfera opresiva, conspiraciones, y una Buenos Aires que se vuelve un
+          laberinto donde la ciencia y lo sobrenatural se rozan peligrosamente.
+        </p>
+        <div class="btn-container">
+          <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20me%20interesa%20%C3%93xido%20en%20la%20niebla.%20%C2%BFMe%20avis%C3%A1s%20novedades%20o%20cu%C3%A1ndo%20sale%3F" class="btn btn-wa" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+          <a href="#contacto" class="btn">Contacto</a>
+        </div>
+      </article>
     </section>
 
     <section id="bio" class="section" aria-label="Biografía">
@@ -786,6 +896,12 @@
 
     <footer>
       <p>&copy; <span id="year"></span> Christian Jourdan. Todos los derechos reservados.</p>
+
+      <!-- C: logo + escudo al final -->
+      <div class="brand-footer" aria-label="Identidad">
+        <img class="logo" src="logo-cj-alfa.png" alt="Logo Christian Jourdan" loading="lazy" decoding="async">
+        <img src="escudo-cj-alfa.jpg" alt="Escudo Christian Jourdan" loading="lazy" decoding="async">
+      </div>
     </footer>
   </main>
 
@@ -815,7 +931,7 @@
   </div>
 
   <!-- =========================
-       NUEVO: Modal de SPOTIFY
+       Modal de SPOTIFY
        ========================= -->
   <div class="video-modal" id="spotifyModal" aria-hidden="true">
     <div class="video-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="spotifyModalTitle">
@@ -880,19 +996,16 @@
 
     function toYouTubeEmbed(url) {
       try {
-        // youtu.be/<id>
         const short = url.match(/youtu\.be\/([A-Za-z0-9_-]{6,})/);
         if (short && short[1]) return `https://www.youtube.com/embed/${short[1]}?autoplay=1&rel=0`;
 
-        // youtube.com/watch?v=<id>
         const watch = url.match(/[?&]v=([A-Za-z0-9_-]{6,})/);
         if (watch && watch[1]) return `https://www.youtube.com/embed/${watch[1]}?autoplay=1&rel=0`;
 
-        // youtube.com/shorts/<id>
         const shorts = url.match(/youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/);
         if (shorts && shorts[1]) return `https://www.youtube.com/embed/${shorts[1]}?autoplay=1&rel=0`;
 
-        return url; // fallback
+        return url;
       } catch {
         return url;
       }
@@ -911,7 +1024,7 @@
     function closeVideoModal() {
       modal.classList.remove("is-open");
       modal.setAttribute("aria-hidden", "true");
-      iframe.src = ""; // corta el video
+      iframe.src = "";
       document.body.style.overflow = "";
     }
 
@@ -937,7 +1050,7 @@
     });
 
     /* =========================
-       NUEVO: Ventana (modal) para Spotify
+       Modal Spotify
        ========================= */
     const spModal = document.getElementById("spotifyModal");
     const spClose = document.getElementById("spotifyModalClose");
@@ -946,7 +1059,6 @@
 
     function toSpotifyEmbed(url) {
       try {
-        // convierte: open.spotify.com/playlist/<id>...
         const m = url.match(/open\.spotify\.com\/playlist\/([A-Za-z0-9]+)/);
         if (m && m[1]) return `https://open.spotify.com/embed/playlist/${m[1]}?utm_source=generator&theme=0`;
         return url;
@@ -967,7 +1079,7 @@
     function closeSpotifyModal() {
       spModal.classList.remove("is-open");
       spModal.setAttribute("aria-hidden", "true");
-      spIframe.src = ""; // corta audio
+      spIframe.src = "";
       document.body.style.overflow = "";
     }
 
