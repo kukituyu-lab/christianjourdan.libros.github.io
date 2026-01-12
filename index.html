@@ -524,17 +524,95 @@
   </style>
 
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Christian Edsel Jourdan",
-    "url":"https://christianjourdan.com/",
-    "jobTitle":"Escritor",
-    "email":"christianjourdan.libros@gmail.com",
-    "knowsAbout":["Thriller","Esoterismo","Simbolismo","Sobrenatural","Narrativa"],
-    "sameAs":[ "https://www.instagram.com/christianjourdan75/" ]
-  }
-  </script>
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://christianjourdan.com/#website",
+      "url": "https://christianjourdan.com/",
+      "name": "Christian Jourdan | Escritor",
+      "inLanguage": "es-AR",
+      "publisher": { "@id": "https://christianjourdan.com/#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://christianjourdan.com/#person",
+      "name": "Christian Edsel Jourdan",
+      "url": "https://christianjourdan.com/",
+      "jobTitle": "Escritor",
+      "email": "christianjourdan.libros@gmail.com",
+      "knowsAbout": ["Thriller", "Esoterismo", "Simbolismo", "Sobrenatural", "Narrativa"],
+      "sameAs": ["https://www.instagram.com/christianjourdan75/"]
+    },
+
+    {
+      "@type": "Book",
+      "@id": "https://christianjourdan.com/#book-trascendentia",
+      "name": "El Ocaso de las Sombras: Trascendentia",
+      "author": { "@id": "https://christianjourdan.com/#person" },
+      "inLanguage": "es",
+      "genre": ["Thriller", "Esoterismo"],
+      "datePublished": "2024",
+      "url": "https://christianjourdan.com/#libros",
+      "image": "https://christianjourdan.com/trascendentia.jpg",
+      "description": "Una muerte imposible expone el nexo entre una farmacológica y símbolos antiguos. Santiago Moix se sumerge en un laberinto de sociedades secretas y mensajes cifrados."
+    },
+
+    {
+      "@type": "Book",
+      "@id": "https://christianjourdan.com/#book-portal",
+      "name": "El Portal de los Días Velados",
+      "author": { "@id": "https://christianjourdan.com/#person" },
+      "inLanguage": "es",
+      "genre": ["Ficción", "Crónicas de lo extraordinario", "Sobrenatural"],
+      "datePublished": "2025",
+      "url": "https://christianjourdan.com/#libros",
+      "image": "https://christianjourdan.com/el-portal.jpg",
+      "description": "Historias donde lo imposible se vuelve inevitable. Una ciudad de Rosario surrealista y onírica a través de cuentos cortos."
+    },
+
+    {
+      "@type": "Book",
+      "@id": "https://christianjourdan.com/#book-preludium",
+      "name": "El Ocaso de las Sombras: Preludium",
+      "author": { "@id": "https://christianjourdan.com/#person" },
+      "inLanguage": "es",
+      "genre": ["Thriller", "Noir", "Esoterismo"],
+      "datePublished": "2026",
+      "url": "https://christianjourdan.com/#libros",
+      "image": "https://christianjourdan.com/preludium.jpg",
+      "description": "Crímenes rituales, un grimorio prohibido y una investigación que destapa desenlaces inesperados. Preludium abre El ocaso de las sombras con un noir oscuro."
+    },
+
+    {
+      "@type": "Book",
+      "@id": "https://christianjourdan.com/#book-atajos",
+      "name": "Atajos",
+      "author": { "@id": "https://christianjourdan.com/#person" },
+      "inLanguage": "es",
+      "genre": ["Thriller", "Policial", "Urbano"],
+      "creativeWorkStatus": "In development",
+      "url": "https://christianjourdan.com/#atajos",
+      "image": "https://christianjourdan.com/1-atajos-tapa.jpg",
+      "description": "En el asfalto gastado de Rosario, Mario Rossi, un taxista, se ve arrastrado a una conspiración. Un thriller donde la lealtad es un lujo y sobrevivir es un arte."
+    },
+
+    {
+      "@type": "Book",
+      "@id": "https://christianjourdan.com/#book-oxido",
+      "name": "Óxido en la niebla",
+      "author": { "@id": "https://christianjourdan.com/#person" },
+      "inLanguage": "es",
+      "genre": ["Policial", "Aventura", "Steampunk"],
+      "creativeWorkStatus": "In development",
+      "url": "https://christianjourdan.com/#oxido",
+      "image": "https://christianjourdan.com/oxido-en-la-niebla.jpg",
+      "description": "Buenos Aires, década de 1920. Un hecho inquietante y un grupo de aliados descubren talleres ocultos y un sistema de control mecánico. Policial de aventura con estética steampunk."
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
