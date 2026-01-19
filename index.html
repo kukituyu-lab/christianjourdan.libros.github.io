@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<script>
-  (function () {
-    if (location.hostname === "christianjourdan.com") {
-      location.replace("https://www.christianjourdan.com" + location.pathname + location.search + location.hash);
-    }
-  })();
-</script>
+  <!-- (Opcional) Forzar WWW si entran por christianjourdan.com -->
+  <script>
+    (function () {
+      if (location.hostname === "christianjourdan.com") {
+        location.replace("https://www.christianjourdan.com" + location.pathname + location.search + location.hash);
+      }
+    })();
+  </script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,15 +18,26 @@
   <!-- SEO -->
   <meta name="description" content="Sitio oficial de Christian Edsel Jourdan. Thriller, esoterismo, novela policial y crónicas de lo extraordinario. Libros disponibles en Mercado Libre, Tinta Libre y Amazon. Proyectos en desarrollo: Atajos, Óxido en la niebla, La arquitectura del silencio (sinestesia)." />
   <meta name="keywords" content="Christian Jourdan, escritor, thriller, esoterismo, novela policial, sinestesia, crónicas de lo extraordinario, El ocaso de las sombras, Trascendentia, Preludium, El portal de los días velados, Atajos, Óxido en la niebla, La arquitectura del silencio, policial argentino, thriller urbano, steampunk Buenos Aires" />
+  <meta name="author" content="Christian Edsel Jourdan" />
+  <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.christianjourdan.com/" />
 
-  <!-- Social / Open Graph -->
+  <!-- Iconos (subí estos archivos a la raíz del repo si querés que funcionen) -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Social / Open Graph (WhatsApp/Facebook/IG usan OG) -->
   <meta property="og:title" content="Christian Jourdan | Escritor" />
   <meta property="og:description" content="Crónicas de lo extraordinario • Thriller • Esoterismo • Novela policial. Libros y proyectos en desarrollo." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.christianjourdan.com/" />
-  <meta property="og:image" content="https://www.christianjourdan.com/og.jpg" />
-  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- IMPORTANTE: esta imagen debe existir en tu repo -->
+  <meta property="og:image" content="https://www.christianjourdan.com/rubrica-byn-autor.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_AR" />
 
   <!-- Performance: fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -264,7 +276,6 @@
       letter-spacing: 1px;
     }
 
-    /* NUEVO: subtítulo chico (keywords visibles) */
     .subtitulo {
       margin: 0 auto 12px;
       max-width: 760px;
@@ -345,7 +356,6 @@
       border-color: rgba(37,211,102,0.95);
     }
 
-    /* Botón Spotify */
     .btn-sp {
       border-color: rgba(30,215,96,0.70);
       color: rgba(210,255,230,0.95);
@@ -356,7 +366,6 @@
       border-color: rgba(30,215,96,0.95);
     }
 
-    /* NUEVO: chip arriba de la portada (uniformidad proyectos) */
     .chip-top {
       display: inline-block;
       margin: 0 auto 14px;
@@ -460,9 +469,6 @@
       .btn:hover, .libro-card:hover { transform: none; }
     }
 
-    /* =========================
-       Modal genérico (Video / Spotify)
-       ========================= */
     .video-modal {
       position: fixed;
       inset: 0;
@@ -518,7 +524,6 @@
       color: #000;
     }
 
-    /* Video frame */
     .video-modal__frame {
       position: relative;
       width: 100%;
@@ -533,7 +538,6 @@
       border: 0;
     }
 
-    /* Spotify frame */
     .spotify-modal__frame {
       position: relative;
       width: 100%;
@@ -673,7 +677,7 @@
     }
   ]
 }
-</script>
+  </script>
 </head>
 
 <body>
