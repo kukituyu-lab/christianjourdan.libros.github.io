@@ -8,22 +8,23 @@
     }
   })();
 </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Christian Jourdan | Escritor</title>
 
   <!-- SEO -->
-  <meta name="description" content="Sitio oficial de Christian Edsel Jourdan. Thriller, esoterismo y crónicas de lo extraordinario. Libros disponibles en Mercado Libre, Tinta Libre y Amazon. Compra directa por Mercado Pago o transferencia." />
-  <meta name="keywords" content="Christian Jourdan, escritor, thriller, esoterismo, crónicas de lo extraordinario, El ocaso de las sombras, Trascendentia, Preludium, El portal de los días velados, Atajos, Óxido en la niebla" />
-  <link rel="canonical" href="https://christianjourdan.com/" />
+  <meta name="description" content="Sitio oficial de Christian Edsel Jourdan. Thriller, esoterismo, novela policial y crónicas de lo extraordinario. Libros disponibles en Mercado Libre, Tinta Libre y Amazon. Proyectos en desarrollo: Atajos, Óxido en la niebla, La arquitectura del silencio (sinestesia)." />
+  <meta name="keywords" content="Christian Jourdan, escritor, thriller, esoterismo, novela policial, sinestesia, crónicas de lo extraordinario, El ocaso de las sombras, Trascendentia, Preludium, El portal de los días velados, Atajos, Óxido en la niebla, La arquitectura del silencio, policial argentino, thriller urbano, steampunk Buenos Aires" />
+  <link rel="canonical" href="https://www.christianjourdan.com/" />
 
   <!-- Social / Open Graph -->
   <meta property="og:title" content="Christian Jourdan | Escritor" />
-  <meta property="og:description" content="Crónicas de lo extraordinario • Thriller • Esoterismo. Libros y compra directa." />
+  <meta property="og:description" content="Crónicas de lo extraordinario • Thriller • Esoterismo • Novela policial. Libros y proyectos en desarrollo." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://christianjourdan.com/" />
-  <meta property="og:image" content="https://christianjourdan.com/og.jpg" />
+  <meta property="og:url" content="https://www.christianjourdan.com/" />
+  <meta property="og:image" content="https://www.christianjourdan.com/og.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Performance: fuentes -->
@@ -259,7 +260,20 @@
       color: var(--dorado);
       margin: 0 0 10px;
       font-size: 1.55rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
+
+    /* NUEVO: subtítulo chico (keywords visibles) */
+    .subtitulo {
+      margin: 0 auto 12px;
+      max-width: 760px;
+      padding: 0 10px;
+      font-family: 'Special Elite', cursive;
+      color: rgba(255,255,255,0.72);
+      font-size: 0.96rem;
+    }
+
     .sinopsis {
       font-family: 'Special Elite', cursive;
       font-size: 1rem;
@@ -331,7 +345,7 @@
       border-color: rgba(37,211,102,0.95);
     }
 
-    /* NUEVO: Botón Spotify */
+    /* Botón Spotify */
     .btn-sp {
       border-color: rgba(30,215,96,0.70);
       color: rgba(210,255,230,0.95);
@@ -342,15 +356,23 @@
       border-color: rgba(30,215,96,0.95);
     }
 
-    .proximamente {
+    /* NUEVO: chip arriba de la portada (uniformidad proyectos) */
+    .chip-top {
       display: inline-block;
-      margin-top: 14px;
-      padding: 10px 16px;
-      background: rgba(0,0,0,0.25);
-      color: rgba(255,255,255,0.65);
+      margin: 0 auto 14px;
+      padding: 8px 12px;
+      border-radius: 999px;
       border: 1px dashed rgba(255,255,255,0.25);
+      background: rgba(0,0,0,0.25);
       font-family: 'Special Elite', cursive;
-      border-radius: 10px;
+      color: rgba(255,255,255,0.72);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+    }
+    .chip-top.prod {
+      border-color: rgba(184,146,65,0.35);
+      color: rgba(184,146,65,0.95);
     }
 
     .grid-2 {
@@ -530,92 +552,124 @@
     }
   </style>
 
+  <!-- SEO estructurado (Google) -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://christianjourdan.com/#website",
-      "url": "https://christianjourdan.com/",
+      "@id": "https://www.christianjourdan.com/#website",
+      "url": "https://www.christianjourdan.com/",
       "name": "Christian Jourdan | Escritor",
       "inLanguage": "es-AR",
-      "publisher": { "@id": "https://christianjourdan.com/#person" }
+      "publisher": { "@id": "https://www.christianjourdan.com/#person" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.christianjourdan.com/#homepage",
+      "url": "https://www.christianjourdan.com/",
+      "name": "Christian Jourdan | Escritor",
+      "description": "Thriller, esoterismo, novela policial y crónicas de lo extraordinario. Libros disponibles y proyectos en desarrollo.",
+      "inLanguage": "es-AR",
+      "about": [
+        "thriller",
+        "esoterismo",
+        "novela policial",
+        "sinestesia",
+        "policial argentino",
+        "steampunk"
+      ],
+      "isPartOf": { "@id": "https://www.christianjourdan.com/#website" }
     },
     {
       "@type": "Person",
-      "@id": "https://christianjourdan.com/#person",
+      "@id": "https://www.christianjourdan.com/#person",
       "name": "Christian Edsel Jourdan",
-      "url": "https://christianjourdan.com/",
+      "url": "https://www.christianjourdan.com/",
       "jobTitle": "Escritor",
       "email": "christianjourdan.libros@gmail.com",
-      "knowsAbout": ["Thriller", "Esoterismo", "Simbolismo", "Sobrenatural", "Narrativa"],
+      "knowsAbout": ["Thriller", "Esoterismo", "Simbolismo", "Sobrenatural", "Narrativa", "Novela policial", "Sinestesia"],
       "sameAs": ["https://www.instagram.com/christianjourdan75/"]
     },
 
     {
       "@type": "Book",
-      "@id": "https://christianjourdan.com/#book-trascendentia",
+      "@id": "https://www.christianjourdan.com/#book-trascendentia",
       "name": "El Ocaso de las Sombras: Trascendentia",
-      "author": { "@id": "https://christianjourdan.com/#person" },
+      "author": { "@id": "https://www.christianjourdan.com/#person" },
       "inLanguage": "es",
       "genre": ["Thriller", "Esoterismo"],
       "datePublished": "2024",
-      "url": "https://christianjourdan.com/#libros",
-      "image": "https://christianjourdan.com/trascendentia.jpg",
+      "url": "https://www.christianjourdan.com/#libros",
+      "image": "https://www.christianjourdan.com/trascendentia.jpg",
       "description": "Una muerte imposible expone el nexo entre una farmacológica y símbolos antiguos. Santiago Moix se sumerge en un laberinto de sociedades secretas y mensajes cifrados."
     },
 
     {
       "@type": "Book",
-      "@id": "https://christianjourdan.com/#book-portal",
+      "@id": "https://www.christianjourdan.com/#book-portal",
       "name": "El Portal de los Días Velados",
-      "author": { "@id": "https://christianjourdan.com/#person" },
+      "author": { "@id": "https://www.christianjourdan.com/#person" },
       "inLanguage": "es",
       "genre": ["Ficción", "Crónicas de lo extraordinario", "Sobrenatural"],
       "datePublished": "2025",
-      "url": "https://christianjourdan.com/#libros",
-      "image": "https://christianjourdan.com/el-portal.jpg",
+      "url": "https://www.christianjourdan.com/#libros",
+      "image": "https://www.christianjourdan.com/el-portal.jpg",
       "description": "Historias donde lo imposible se vuelve inevitable. Una ciudad de Rosario surrealista y onírica a través de cuentos cortos."
     },
 
     {
       "@type": "Book",
-      "@id": "https://christianjourdan.com/#book-preludium",
+      "@id": "https://www.christianjourdan.com/#book-preludium",
       "name": "El Ocaso de las Sombras: Preludium",
-      "author": { "@id": "https://christianjourdan.com/#person" },
+      "author": { "@id": "https://www.christianjourdan.com/#person" },
       "inLanguage": "es",
       "genre": ["Thriller", "Noir", "Esoterismo"],
       "datePublished": "2026",
-      "url": "https://christianjourdan.com/#libros",
-      "image": "https://christianjourdan.com/preludium.jpg",
+      "url": "https://www.christianjourdan.com/#libros",
+      "image": "https://www.christianjourdan.com/preludium.jpg",
       "description": "Crímenes rituales, un grimorio prohibido y una investigación que destapa desenlaces inesperados. Preludium abre El ocaso de las sombras con un noir oscuro."
     },
 
     {
       "@type": "Book",
-      "@id": "https://christianjourdan.com/#book-atajos",
+      "@id": "https://www.christianjourdan.com/#book-atajos",
       "name": "Atajos",
-      "author": { "@id": "https://christianjourdan.com/#person" },
+      "author": { "@id": "https://www.christianjourdan.com/#person" },
       "inLanguage": "es",
-      "genre": ["Thriller", "Policial", "Urbano"],
+      "genre": ["Thriller", "Novela policial", "Thriller urbano"],
       "creativeWorkStatus": "In development",
-      "url": "https://christianjourdan.com/#atajos",
-      "image": "https://christianjourdan.com/1-atajos-tapa.jpg",
-      "description": "En el asfalto gastado de Rosario, Mario Rossi, un taxista, se ve arrastrado a una conspiración. Un thriller donde la lealtad es un lujo y sobrevivir es un arte."
+      "url": "https://www.christianjourdan.com/#atajos",
+      "image": "https://www.christianjourdan.com/1-atajos-tapa.jpg",
+      "description": "Thriller urbano en Rosario: Mario Rossi, taxista, se ve arrastrado a una conspiración. Lealtad, violencia y pactos invisibles en los márgenes de la ciudad."
     },
 
     {
       "@type": "Book",
-      "@id": "https://christianjourdan.com/#book-oxido",
+      "@id": "https://www.christianjourdan.com/#book-oxido",
       "name": "Óxido en la niebla",
-      "author": { "@id": "https://christianjourdan.com/#person" },
+      "author": { "@id": "https://www.christianjourdan.com/#person" },
       "inLanguage": "es",
-      "genre": ["Policial", "Aventura", "Steampunk"],
+      "genre": ["Novela policial", "Aventura", "Steampunk"],
       "creativeWorkStatus": "In development",
-      "url": "https://christianjourdan.com/#oxido",
-      "image": "https://christianjourdan.com/oxido-en-la-niebla.jpg",
-      "description": "Buenos Aires, década de 1920. Un hecho inquietante y un grupo de aliados descubren talleres ocultos y un sistema de control mecánico. Policial de aventura con estética steampunk."
+      "url": "https://www.christianjourdan.com/#oxido",
+      "image": "https://www.christianjourdan.com/oxido-en-la-niebla.jpg",
+      "description": "Buenos Aires, 1920. Policial de aventura con estética steampunk: talleres ocultos, artefactos ópticos y una forma inédita de control detrás del progreso industrial."
+    },
+
+    {
+      "@type": "Book",
+      "@id": "https://www.christianjourdan.com/#book-arquitectura",
+      "name": "La arquitectura del silencio",
+      "author": { "@id": "https://www.christianjourdan.com/#person" },
+      "inLanguage": "es",
+      "genre": ["Novela policial", "Thriller"],
+      "keywords": ["sinestesia", "novela policial", "thriller", "Buenos Aires", "Policía Federal"],
+      "creativeWorkStatus": "In development",
+      "url": "https://www.christianjourdan.com/#arquitectura",
+      "image": "https://www.christianjourdan.com/tapa-sinestesia-con-titulo-final.png",
+      "description": "Novela policial con sinestesia: Zoe, oficial de la Policía Federal, percibe el mundo mezclando sentidos. Muertes impecables y silencios calculados en Buenos Aires."
     }
   ]
 }
@@ -633,8 +687,7 @@
       </a>
       <nav class="nav" aria-label="Navegación">
         <a href="#libros">Libros</a>
-        <a href="#atajos">Atajos</a>
-        <a href="#oxido">Óxido</a>
+        <a href="#proyectos">Proyectos</a>
         <a href="#bio">Biografía</a>
         <a href="#pagos">Pagos</a>
         <a href="#newsletter">Newsletter</a>
@@ -682,6 +735,7 @@
       <article class="libro-card">
         <img src="trascendentia.jpg" alt="Tapa El Ocaso de las Sombras: Trascendentia" class="portada" loading="lazy" decoding="async">
         <h3>El Ocaso de las Sombras: Trascendentia</h3>
+        <p class="subtitulo">Thriller • Esoterismo • Sociedades secretas</p>
         <p class="sinopsis">
           Una muerte imposible expone el nexo entre una farmacológica y símbolos antiguos.
           Santiago Moix se sumerge en un laberinto de sociedades secretas y mensajes cifrados.
@@ -703,6 +757,7 @@
       <article class="libro-card">
         <img src="el-portal.jpg" alt="Tapa El Portal de los Días Velados" class="portada" loading="lazy" decoding="async">
         <h3>El Portal de los Días Velados</h3>
+        <p class="subtitulo">Crónicas • Sobrenatural • Rosario onírico</p>
         <p class="sinopsis">
           Historias donde lo imposible se vuelve inevitable.
           Sumérgete en una ciudad de Rosario surrealista y onírica a través de 24 cuentos cortos.
@@ -729,14 +784,14 @@
 
       <article class="libro-card">
         <img src="preludium.jpg" alt="Tapa El Ocaso de las Sombras: Preludium" class="portada" loading="lazy" decoding="async">
-
         <h3>El Ocaso de las Sombras: Preludium</h3>
+        <p class="subtitulo">Noir • Esoterismo • Crímenes rituales</p>
         <p class="sinopsis">
           Crímenes rituales, un grimorio prohibido y una investigación que destapa desenlaces inesperados.
           Preludium abre El ocaso de las sombras con un noir oscuro donde cada pista exige un precio.
         </p>
 
-        <span class="proximamente">PRÓXIMAMENTE · Editorial Tinta Libre</span>
+        <span class="chip-top prod">PRÓXIMAMENTE</span>
 
         <div class="btn-container" style="margin-top:14px">
           <a href="https://youtube.com/shorts/ZJKbuwwrvh0" class="btn btn-yt js-video"
@@ -751,15 +806,20 @@
     </section>
 
     <!-- =========================
-         ATAJOS
+         PROYECTOS (uniforme)
          ========================= -->
-    <section id="atajos" class="section" aria-label="Atajos (proyecto en desarrollo)">
-      <h2>Atajos</h2>
-      <p class="lead">Proyecto en desarrollo.</p>
+    <section id="proyectos" class="section" aria-label="Proyectos (en desarrollo)">
+      <h2>Proyectos</h2>
+      <p class="lead">Obras en desarrollo y en producción. Si querés enterarte antes que nadie, avisame por WhatsApp.</p>
 
-      <article class="libro-card">
+      <!-- ATAJOS -->
+      <article id="atajos" class="libro-card">
+        <span class="chip-top">PROYECTO EN DESARROLLO</span>
+
         <img src="1-atajos-tapa.jpg" alt="Tapa Atajos" class="portada" loading="lazy" decoding="async">
+
         <h3>Atajos</h3>
+        <p class="subtitulo">Thriller urbano • Novela policial • Rosario</p>
 
         <p class="sinopsis">
           En el asfalto gastado de Rosario, donde cada rincón esconde una historia y cada silencio puede ser una amenaza, Mario Rossi, un taxista, navega la noche con la astucia de quien conoce demasiado bien los márgenes de los barrios. Su “rutina”, esas entregas extraoficiales, son solo un síntoma de una ciudad que late al ritmo de pactos invisibles y peligros latentes.
@@ -780,18 +840,15 @@
           <a href="#contacto" class="btn">Escribirme</a>
         </div>
       </article>
-    </section>
 
-    <!-- =========================
-         ÓXIDO EN LA NIEBLA
-         ========================= -->
-    <section id="oxido" class="section" aria-label="Óxido en la niebla (proyecto en desarrollo)">
-      <h2>Óxido en la niebla</h2>
-      <p class="lead">Proyecto en desarrollo.</p>
+      <!-- ÓXIDO EN LA NIEBLA -->
+      <article id="oxido" class="libro-card">
+        <span class="chip-top">PROYECTO EN DESARROLLO</span>
 
-      <article class="libro-card">
         <img src="oxido-en-la-niebla.jpg" alt="Tapa Óxido en la niebla" class="portada" loading="lazy" decoding="async">
+
         <h3>Óxido en la niebla</h3>
+        <p class="subtitulo">Novela policial • Aventura • Steampunk • Buenos Aires 1920</p>
 
         <p class="sinopsis">
           Buenos Aires, década de 1920.
@@ -810,24 +867,30 @@
           <a href="#contacto" class="btn">Escribirme</a>
         </div>
       </article>
-<article class="libro-card">
-  <img src="tapa-sinestesia-con-titulo-final.png" alt="Tapa LA-ARQUITECTURA-DEL-SOLENCIO" class="portada" loading="lazy" decoding="async">
 
-  <h3>LA ARQUITECTURA DEL SILENCIO</h3>
+      <!-- LA ARQUITECTURA DEL SILENCIO -->
+      <article id="arquitectura" class="libro-card">
+        <span class="chip-top prod">EN PRODUCCIÓN</span>
 
-  <p class="sinopsis">
-Zoe es oficial de la Policía Federal y vive con sinestesia, una condición neurológica que mezcla sentidos y vuelve el mundo más intenso: las palabras pueden pesar, los tonos pueden raspar y ciertas verdades se sienten antes de poder probarlas. Ese “don” no es gratis: Buenos Aires la satura, y ella aprende a sobrevivir refugiándose en la oscuridad cuando el cuerpo ya no da más.
-Después de resolver el secuestro de un niño en una fiesta diplomática, una serie de muertes “impecables” sacude la ciudad: escenas limpias, versiones demasiado prolijas y un silencio que parece calculado. Con Agustín, un compañero novato, Zoe sigue pistas que nadie mira y se enfrenta a un caso que no perdona errores.
-Porque en el crimen, como en la vida, lo más peligroso no siempre es lo que se ve: es lo que se siente… y no se puede explicar. 
-  </p>
+        <img src="tapa-sinestesia-con-titulo-final.png" alt="Tapa La arquitectura del silencio" class="portada" loading="lazy" decoding="async">
 
-  <span class="proximamente">EN PRODUCCIÓN</span>
+        <h3>La arquitectura del silencio</h3>
+        <p class="subtitulo">Novela policial • Sinestesia • Policía Federal • Buenos Aires</p>
 
-  <div class="btn-container" style="margin-top:14px">
-    <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20quiero%20info%20sobre%20TITULO-DEL-LIBRO."
-       class="btn btn-wa" target="_blank" rel="noopener">Pedir info por WhatsApp</a>
-  </div>
-</article>
+        <p class="sinopsis">
+          Zoe es oficial de la Policía Federal y vive con sinestesia, una condición neurológica que mezcla sentidos y vuelve el mundo más intenso: las palabras pueden pesar, los tonos pueden raspar y ciertas verdades se sienten antes de poder probarlas. Ese “don” no es gratis: Buenos Aires la satura, y ella aprende a sobrevivir refugiándose en la oscuridad cuando el cuerpo ya no da más.
+          <br><br>
+          Después de resolver el secuestro de un niño en una fiesta diplomática, una serie de muertes “impecables” sacude la ciudad: escenas limpias, versiones demasiado prolijas y un silencio que parece calculado. Con Agustín, un compañero novato, Zoe sigue pistas que nadie mira y se enfrenta a un caso que no perdona errores.
+          <br><br>
+          Porque en el crimen, como en la vida, lo más peligroso no siempre es lo que se ve: es lo que se siente… y no se puede explicar.
+        </p>
+
+        <div class="btn-container" style="margin-top:14px">
+          <a href="https://wa.me/5493416878275?text=Hola%20Christian%2C%20quiero%20info%20sobre%20La%20arquitectura%20del%20silencio."
+             class="btn btn-wa" target="_blank" rel="noopener">Pedir info por WhatsApp</a>
+        </div>
+      </article>
+
     </section>
 
     <section id="bio" class="section" aria-label="Biografía">
